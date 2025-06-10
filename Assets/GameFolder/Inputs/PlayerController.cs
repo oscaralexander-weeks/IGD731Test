@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using Unity.Mathematics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,13 +31,38 @@ public class PlayerController : MonoBehaviour
 
     public void RightClickMove()
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         RaycastHit hit; 
         if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
         {
-            Debug.Log("hit2");
+            //Debug.Log("hit2");
             agent.destination = hit.point;
         }
+    }
+
+    private void Update()
+    {
+        FaceTarget();
+    }
+
+    void FaceTarget()
+    {
+
+        Vector3 diff = agent.destination - transform.position;
+
+        // If the difference is negligible, skip rotation
+        if (diff.sqrMagnitude < 0.01f)
+            return;
+
+        Vector3 direction = diff.normalized;
+        Vector3 flatDirection = new Vector3(direction.x, 0, direction.z);
+
+        // Ensure flatDirection is non-zero before proceeding
+        if (flatDirection == Vector3.zero)
+            return;
+
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
     }
 
 }
