@@ -1,0 +1,34 @@
+{
+    "name": "ClickToMove",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "f68241fe-03ad-4b79-a231-30cc7cc907da",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "724c6aca-9adf-434a-89a4-389bab40861a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d8e53bc6-7ade-41ed-92c5-44906d8325aa",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
