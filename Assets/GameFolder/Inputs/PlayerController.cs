@@ -17,17 +17,26 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        input = new ClickToMove();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void MovementEvent(InputAction.CallbackContext context)
     {
-        
+        if (context.performed)
+        {
+            RightClickMove();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RightClickMove()
     {
-        
+        Debug.Log("hit");
+        RaycastHit hit; 
+        if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, clickableLayers))
+        {
+            Debug.Log("hit2");
+            agent.destination = hit.point;
+        }
     }
+
 }
