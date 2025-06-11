@@ -6,7 +6,17 @@ using UnityEngine.UI;
 public class UIHealthDisplay : MonoBehaviour
 {
     public FloatVariable variable;
+    public FloatVariable variableMax;
     public Slider slider;
+    public bool isReset;
+    private void Start()
+    {
+        if (isReset)
+        {
+            variable.Value = variableMax.Value;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -15,4 +25,6 @@ public class UIHealthDisplay : MonoBehaviour
 
         slider.value = variable.Value;
     }
+
+
 }
