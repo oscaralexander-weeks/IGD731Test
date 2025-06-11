@@ -2262,11 +2262,11 @@ GameObject:
   - component: {fileID: 1794553154}
   - component: {fileID: 1794553153}
   - component: {fileID: 1794553152}
+  - component: {fileID: 1794553160}
   - component: {fileID: 1794553156}
   - component: {fileID: 1794553157}
   - component: {fileID: 1794553158}
   - component: {fileID: 1794553159}
-  - component: {fileID: 1794553160}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2397,6 +2397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e2e3773e009b84abc1f4c4a29a9532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runtimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
   clickableLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -2443,6 +2444,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 724c6aca-9adf-434a-89a4-389bab40861a
     m_ActionName: Main/Move[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794553157}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: UseItem1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 18595fe0-bf7c-44e8-a6a0-c9b7b849f456
+    m_ActionName: Main/Item[/Keyboard/1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Main

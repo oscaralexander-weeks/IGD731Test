@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     NavMeshAgent agent;
 
+    public NewItemRuntimeSet runtimeSet;
+
     [Header("Movement")]
     [SerializeField] private LayerMask clickableLayers;
     [SerializeField] float lookRotationSpeed = 8f;
@@ -63,6 +65,27 @@ public class PlayerController : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
+    }
+
+    public void UseItem1(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            UseItemAtIndex(0);
+        }
+    }
+    public void UseItemAtIndex(int index)
+    {
+        if (index < runtimeSet.Items.Count && runtimeSet.Items[index] != null && runtimeSet.Items[index].stackSize.Value > 0)
+        {
+            Debug.Log("itemUsed");
+            runtimeSet.Items[index].Use();
+
+        }
+        else
+        {
+            Debug.Log("no item");
+        }
     }
 
 }
