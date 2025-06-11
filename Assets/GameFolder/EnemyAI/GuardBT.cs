@@ -29,7 +29,7 @@ public class GuardBT : BTree
         this code works now testing 
         
         HERE FOR LATEST BLOCK OF CODE INCLUDING TEST - NOW TESTING PATROL SEPARATELY 
-
+        
         Node root = new Selector(new List<Node>
         {
             new BehaviourTree.Sequence(new List<Node>
@@ -42,8 +42,24 @@ public class GuardBT : BTree
 
         });
         */
+        Node root = new Selector(new List<Node>
+        {
+            new BehaviourTree.Sequence(new List<Node>
+        {
+            new CheckEnemyInAttackRange(transform),
+            new AttackNode(HP)
+        }),
 
-        Node root = new TaskPatrol(transform, waypoints);
+            new BehaviourTree.Sequence(new List<Node>
+            {
+                new CheckEnemyInFOVRange(transform),
+                new TaskGoToTarget(transform),
+                //new AttackNode(HP)
+            }),
+            new TaskPatrol(transform, waypoints)
+
+        });
+
 
         return root;
     }
