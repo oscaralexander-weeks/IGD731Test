@@ -2985,9 +2985,9 @@ GameObject:
   - component: {fileID: 1794553152}
   - component: {fileID: 1794553160}
   - component: {fileID: 1794553156}
-  - component: {fileID: 1794553157}
   - component: {fileID: 1794553158}
   - component: {fileID: 1794553159}
+  - component: {fileID: 1794553161}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -3106,23 +3106,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1794553157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794553151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e2e3773e009b84abc1f4c4a29a9532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runtimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
-  clickableLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  lookRotationSpeed: 8
 --- !u!114 &1794553158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,7 +3118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 2e67cf294be121145b3eb7c756e0f7dd,
+  m_Actions: {fileID: -944628639613478452, guid: d56a702812ed3cf478f54e69ca5a1d35,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -3151,9 +3134,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794553157}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: MovementEvent
+      - m_Target: {fileID: 1794553161}
+        m_TargetAssemblyTypeName: PlayerControllerWASD, Assembly-CSharp
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3163,13 +3146,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 724c6aca-9adf-434a-89a4-389bab40861a
-    m_ActionName: Main/Move[/Mouse/rightButton]
+    m_ActionId: 8dd4719a-712a-44f8-ae94-bba5a3734090
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1794553157}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: UseItem1
+      - m_Target: {fileID: 1794553161}
+        m_TargetAssemblyTypeName: PlayerControllerWASD, Assembly-CSharp
+        m_MethodName: OnMouseLook
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3179,11 +3162,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 18595fe0-bf7c-44e8-a6a0-c9b7b849f456
-    m_ActionName: Main/Item[/Keyboard/1]
+    m_ActionId: 5f6d716e-237f-4b58-9d90-b1af0ca0dd2c
+    m_ActionName: Player/mouseLook[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Main
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1794553159
@@ -3225,6 +3208,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1794553161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794553151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b566ab05660f9f74fa97dbb012d743e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1883361867
 GameObject:
   m_ObjectHideFlags: 0
