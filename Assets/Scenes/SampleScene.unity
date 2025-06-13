@@ -1360,6 +1360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatVariables:
   - {fileID: 11400000, guid: 582db6c2da15b2d40b4cb7a3e32af38a, type: 2}
+  - {fileID: 11400000, guid: 4a3c236c8147c6d409c4373d799b2490, type: 2}
   floatReferences: []
   runtimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
   isReset: 1

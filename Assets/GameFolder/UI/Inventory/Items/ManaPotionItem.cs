@@ -10,9 +10,12 @@ public class ManaPotionItem : ItemBaseClass
     {
         if(stackSize.Value > 0)
         {
-            Mana.ApplyChange(amount);
-            stackSize.ApplyChange(-1);
-            Remove();
+            if (Mana != null)
+            {
+                Mana.ApplyChange(amount);
+                stackSize.ApplyChange(-1);
+                Remove();
+            }
         }
     }
 }
