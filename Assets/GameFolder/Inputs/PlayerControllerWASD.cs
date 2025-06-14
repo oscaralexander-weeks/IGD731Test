@@ -30,8 +30,9 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(_mouseLook);
+        
 
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             _rotationTarget = hit.point;
         }
@@ -39,6 +40,7 @@ public class PlayerControllerWASD : MonoBehaviour
         MovePlayerWithAim();
 
         //MovePlayer();
+
     }
 
     public void MovePlayer()
@@ -71,5 +73,4 @@ public class PlayerControllerWASD : MonoBehaviour
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
     }
-
 }
