@@ -3087,10 +3087,9 @@ GameObject:
   - component: {fileID: 1794553158}
   - component: {fileID: 1794553159}
   - component: {fileID: 1794553161}
-  - component: {fileID: 1794553162}
-  - component: {fileID: 1794553163}
   - component: {fileID: 1794553164}
   - component: {fileID: 1794553165}
+  - component: {fileID: 1794553166}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -3331,46 +3330,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   canMove: 1
---- !u!114 &1794553162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794553151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bdbd0e08f996604399f838f09cfdc82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firepoint: {fileID: 365798285}
-  shotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
-    type: 3}
-  shotSpeed: 25
-  shotDecay: 0.5
-  reloadTime: 0.5
-  reloadTimer: 0
-  isReloading: 0
---- !u!114 &1794553163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794553151}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d83dbcc82b645e46a13a74f43b45a90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firepoint: {fileID: 365798285}
-  shotPrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
-    type: 3}
-  shotSpeed: 25
-  shotDecay: 1
-  cooldown: 5
-  cooldownTimer: 0
-  isOnCooldown: 0
+  Weapons:
+  - {fileID: 1794553166}
+  - {fileID: 1794553165}
 --- !u!54 &1794553164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3418,6 +3380,27 @@ MonoBehaviour:
   CooldownTimer: 0
   ShotSpeed: 25
   ShotDecay: 1
+  IsOnCooldown: 0
+--- !u!114 &1794553166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794553151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d228b282ce6c3246b658d0a93430d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Firepoint: {fileID: 365798285}
+  ShotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
+    type: 3}
+  Ammo: 0
+  Cooldown: 0.5
+  CooldownTimer: 0
+  ShotSpeed: 25
+  ShotDecay: 0.5
   IsOnCooldown: 0
 --- !u!1 &1883361867
 GameObject:

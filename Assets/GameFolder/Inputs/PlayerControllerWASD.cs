@@ -11,14 +11,7 @@ public class PlayerControllerWASD : MonoBehaviour
 
     public bool canMove;
 
-    private PrimaryFire _primaryFire;
-    private SecondaryShoot _secondaryFire;
-
-    void Start()
-    {
-        _primaryFire = GetComponent<PrimaryFire>();
-        _secondaryFire = GetComponent<SecondaryShoot>();
-    }
+    public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -34,7 +27,7 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         if (context.performed)
         {
-            Shoot();
+            Shoot(0);
         }
     }
 
@@ -42,24 +35,13 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         if (context.performed)
         {
-            Shoot2();
+            Shoot(1);
         }
     }
 
-    public void Shoot()
+    public void Shoot(int index)
     {
-        if (_primaryFire != null)
-        {
-            _primaryFire.LeftClickShoot();
-        }
-    }
-
-    public void Shoot2()
-    {
-        if(_secondaryFire != null)
-        {
-            _secondaryFire.Shoot();
-        }
+        Weapons[index].Shoot();
     }
 
     // Start is called before the first frame update
