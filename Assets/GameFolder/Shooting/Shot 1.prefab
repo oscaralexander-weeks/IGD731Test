@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1720809571261277744}
   - component: {fileID: 4602108668441637350}
   m_Layer: 0
-  m_Name: Shot
+  m_Name: Shot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,4 +149,4 @@ MonoBehaviour:
   OnProjectileHit:
     m_PersistentCalls:
       m_Calls: []
-  damage: 10
+  damage: 25

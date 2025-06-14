@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PrimaryFire : MonoBehaviour
+public class SecondaryFire : MonoBehaviour
 {
     [SerializeField] private Transform firepoint;
     [SerializeField] private GameObject shotPrefab;
@@ -13,35 +12,33 @@ public class PrimaryFire : MonoBehaviour
     //[SerializeField] private Transform orient;
 
     private int ammo;
-    public float reloadTime, reloadTimer;
-    [SerializeField] private bool isReloading = false;
+    public float cooldown, cooldownTimer;
+    [SerializeField] private bool isOnCooldown = false;
 
     private void Start()
     {
         //InvokeRepeating("LeftClickShoot", 1, 3);
-        reloadTimer = reloadTime;
-        
+        cooldownTimer = cooldown;
     }
 
     private void Update()
     {
-        
-        if (isReloading)
-        {
-            reloadTimer -= Time.deltaTime;
 
-            if (reloadTimer < 0.01f)
+        if (isOnCooldown)
+        {
+            cooldownTimer -= Time.deltaTime;
+
+            if (cooldownTimer < 0.01f)
             {
-                isReloading = false;
-                reloadTimer = reloadTime; 
+                isOnCooldown = false;
+                cooldownTimer = cooldown;
             }
         }
     }
-
-    public void LeftClickShoot()
+    public void Shoot()
     {
 
-        if (!isReloading)
+        if (!isOnCooldown)
         {
             var bullet = Instantiate(shotPrefab, firepoint.position, firepoint.rotation);
 
@@ -49,12 +46,8 @@ public class PrimaryFire : MonoBehaviour
 
             Destroy(bullet, shotDecay);
 
-            isReloading = true;
+            isOnCooldown = true;
         }
 
     }
-
-
-
 }
- 
