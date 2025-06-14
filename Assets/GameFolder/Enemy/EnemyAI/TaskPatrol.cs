@@ -23,6 +23,15 @@ public class TaskPatrol : Node
 
     public override NodeState Evaluate()
     {
+
+        Enemy enemy = (Enemy)GetData("enemy");
+        if (enemy != null && enemy.HasStatusEffect)
+        {
+            // If stunned, skip movement.
+            state = NodeState.FAILURE;  // or state = NodeState.RUNNING depending on your logic.
+            return state;
+        }
+
         if (_isWaiting)
         {
             waitCounter += Time.deltaTime;

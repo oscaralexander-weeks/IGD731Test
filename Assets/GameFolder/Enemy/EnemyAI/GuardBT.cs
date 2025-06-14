@@ -14,7 +14,12 @@ public class GuardBT : BTree
 
     //additions I've made specific to this game 
     public FloatVariable HP;
-    public bool statusEffect;
+    private Enemy _enemy;
+
+    private void Awake()
+    {
+        _enemy = GetComponent<Enemy>();
+    }
 
     protected override Node SetUpTree()
     {
@@ -49,7 +54,7 @@ public class GuardBT : BTree
         {
             new BehaviourTree.Sequence(new List<Node>
         {
-            new CheckStatusEffects(statusEffect),
+            new CheckStatusEffects(_enemy),
             new CheckEnemyInAttackRange(transform),
             new AttackNode(HP)
         }),

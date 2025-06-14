@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    private GuardBT enemy;
+    private Enemy enemy;
 
     private void OnTriggerEnter(Collider other)
     {
-        enemy = other.GetComponent<GuardBT>();
+        enemy = other.GetComponent<Enemy>();
 
         if(enemy != null)
         {
@@ -16,12 +16,14 @@ public class Trap : MonoBehaviour
         }
     }
 
-
     private IEnumerator WillThisWork()
     {
-        enemy.gameObject.transform.position = new Vector3(0, 0, 0);
+        enemy.HasStatusEffect = true;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
+
+        enemy.HasStatusEffect = false;
+        Destroy(gameObject);
 
     }
 

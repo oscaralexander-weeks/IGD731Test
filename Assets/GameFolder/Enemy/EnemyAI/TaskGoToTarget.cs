@@ -18,7 +18,16 @@ public class TaskGoToTarget : Node
     {
         Transform target = (Transform)GetData("target");
 
-        if(Vector3.Distance(_transform.position, target.position) > 0.01f)
+        // Check enemy status before moving.
+        Enemy enemy = (Enemy)GetData("enemy");
+        if (enemy != null && enemy.HasStatusEffect)
+        {
+            // If stunned, skip movement.
+            state = NodeState.FAILURE;  // or state = NodeState.RUNNING depending on your logic.
+            return state;
+        }
+
+        if (Vector3.Distance(_transform.position, target.position) > 0.01f)
         {
             _transform.position = Vector3.MoveTowards(_transform.position, target.position, GuardBT.speed * Time.deltaTime);
             _transform.LookAt(target.position);

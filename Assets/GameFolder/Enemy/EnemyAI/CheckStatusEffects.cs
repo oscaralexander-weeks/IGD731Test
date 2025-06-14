@@ -2,37 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using BehaviourTree;
+using UnityEditor;
 
 public class CheckStatusEffects : Node
 {
-    private bool _isUnderStatus = false;
-
-    private float _statusTimer = 2.0f;
-    private float _statusDuration = 2.0f;
-
-    public CheckStatusEffects(bool statusEffect)
+    private Enemy _enemy;
+    public CheckStatusEffects(Enemy enemy)
     {
-        _isUnderStatus = statusEffect;
+        _enemy = enemy;
     }
 
     public override NodeState Evaluate()
     {
-        //object e = GetData("enemy");
+        object e = GetData("enemy");
 
-        if (_isUnderStatus)
+        if(e != null)
         {
-            Debug.Log("found status");
-            _statusTimer -= Time.deltaTime;
-            state = NodeState.RUNNING;
-            return state;
-        }
-
-        if(_statusTimer < 0.01f)
-        {
-            _isUnderStatus = false;
-            _statusTimer = _statusDuration;
             state = NodeState.SUCCESS;
             return state;
+        }
+        else
+        {
+            parent.parent.SetData("enemy", _enemy);
         }
 
         state = NodeState.FAILURE;

@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public int unitHealth;
     public UnityEvent onUnitDeath;
 
+    public bool HasStatusEffect;
+
     private void OnEnable()
     {
         runtimeSet.Add(this);
