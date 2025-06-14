@@ -11,7 +11,10 @@ public class GuardBT : BTree
     public static float fovRange = 6f;
     public static float attackRange = 3f;
 
+
+    //additions I've made specific to this game 
     public FloatVariable HP;
+    public bool statusEffect;
 
     protected override Node SetUpTree()
     {
@@ -46,6 +49,7 @@ public class GuardBT : BTree
         {
             new BehaviourTree.Sequence(new List<Node>
         {
+            new CheckStatusEffects(statusEffect),
             new CheckEnemyInAttackRange(transform),
             new AttackNode(HP)
         }),

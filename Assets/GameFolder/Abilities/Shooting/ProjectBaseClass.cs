@@ -14,12 +14,6 @@ public class ProjectBaseClass : MonoBehaviour
         Physics.IgnoreLayerCollision(0, 7);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
