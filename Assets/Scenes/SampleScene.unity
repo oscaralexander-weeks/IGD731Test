@@ -572,7 +572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &323705338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,7 +3047,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767135883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -3089,6 +3089,7 @@ GameObject:
   - component: {fileID: 1794553159}
   - component: {fileID: 1794553161}
   - component: {fileID: 1794553162}
+  - component: {fileID: 1794553163}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -3193,7 +3194,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794553151}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 5
@@ -3282,6 +3283,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a5f1ef3f-5927-4f11-b550-d8dad67fb674
     m_ActionName: Player/Shoot[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794553161}
+        m_TargetAssemblyTypeName: PlayerControllerWASD, Assembly-CSharp
+        m_MethodName: OnShoot2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5be0db44-92a6-4ef6-ab97-f6ed4e3d4681
+    m_ActionName: Player/Shoot2[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3339,6 +3356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  canMove: 1
 --- !u!114 &1794553162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3377,26 @@ MonoBehaviour:
   reloadTime: 0.5
   reloadTimer: 0
   isReloading: 0
+--- !u!114 &1794553163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794553151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d83dbcc82b645e46a13a74f43b45a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firepoint: {fileID: 365798285}
+  shotPrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
+    type: 3}
+  shotSpeed: 25
+  shotDecay: 1
+  cooldown: 5
+  cooldownTimer: 0
+  isOnCooldown: 0
 --- !u!1 &1883361867
 GameObject:
   m_ObjectHideFlags: 0

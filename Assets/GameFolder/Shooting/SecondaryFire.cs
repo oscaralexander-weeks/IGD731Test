@@ -6,6 +6,8 @@ public class SecondaryFire : MonoBehaviour
 {
     [SerializeField] private Transform firepoint;
     [SerializeField] private GameObject shotPrefab;
+    private PlayerControllerWASD _movement;
+
 
     public float shotSpeed;
     public float shotDecay;
@@ -19,6 +21,7 @@ public class SecondaryFire : MonoBehaviour
     {
         //InvokeRepeating("LeftClickShoot", 1, 3);
         cooldownTimer = cooldown;
+        _movement = GetComponent<PlayerControllerWASD>();
     }
 
     private void Update()
@@ -40,14 +43,45 @@ public class SecondaryFire : MonoBehaviour
 
         if (!isOnCooldown)
         {
+            StartCoroutine(ShootRoutine());
+
+            isOnCooldown = true;
+        }
+
+    }
+
+    public IEnumerator ShootRoutine()
+    {
+        //stop movement 
+        if (_movement != null)
+        {
+            _movement.canMove = false;
+            //start shooting coroutine
+            yield return StartCoroutine(OtherShootRoutine());
+
+            _movement.canMove = true;
+        }
+        
+        //start movement
+        
+    }
+
+    public IEnumerator OtherShootRoutine()
+    {
+        int i = 3;
+
+        while(i > 0)
+        {
             var bullet = Instantiate(shotPrefab, firepoint.position, firepoint.rotation);
 
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * shotSpeed;
 
             Destroy(bullet, shotDecay);
 
-            isOnCooldown = true;
+            i--;
+            yield return new WaitForSeconds(1);
         }
 
+        
     }
 }

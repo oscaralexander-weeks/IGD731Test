@@ -9,8 +9,16 @@ public class PlayerControllerWASD : MonoBehaviour
     private Vector2 _move, _mouseLook;
     private Vector3 _rotationTarget;
 
-    private PrimaryFire _primaryFire;
+    public bool canMove;
 
+    private PrimaryFire _primaryFire;
+    private SecondaryFire _secondaryFire;
+
+    void Start()
+    {
+        _primaryFire = GetComponent<PrimaryFire>();
+        _secondaryFire = GetComponent<SecondaryFire>();
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -30,16 +38,31 @@ public class PlayerControllerWASD : MonoBehaviour
         }
     }
 
+    public void OnShoot2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Shoot2();
+        }
+    }
+
     public void Shoot()
     {
-        _primaryFire.LeftClickShoot();
+        if (_primaryFire != null)
+        {
+            _primaryFire.LeftClickShoot();
+        }
+    }
+
+    public void Shoot2()
+    {
+        if(_secondaryFire != null)
+        {
+            _secondaryFire.Shoot();
+        }
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        _primaryFire = GetComponent<PrimaryFire>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -84,9 +107,13 @@ public class PlayerControllerWASD : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
         }
 
-        Vector3 movement = new Vector3(_move.x, 0f, _move.y);
+        if (canMove)
+        {
+            Vector3 movement = new Vector3(_move.x, 0f, _move.y);
 
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        }
+
 
     }
 }
