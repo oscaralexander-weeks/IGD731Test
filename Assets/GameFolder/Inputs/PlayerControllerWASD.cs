@@ -9,6 +9,9 @@ public class PlayerControllerWASD : MonoBehaviour
     private Vector2 _move, _mouseLook;
     private Vector3 _rotationTarget;
 
+    private PrimaryFire _primaryFire;
+
+
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -19,10 +22,23 @@ public class PlayerControllerWASD : MonoBehaviour
         _mouseLook = context.ReadValue<Vector2>();
     }
 
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        _primaryFire.LeftClickShoot();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _primaryFire = GetComponent<PrimaryFire>();
     }
 
     // Update is called once per frame

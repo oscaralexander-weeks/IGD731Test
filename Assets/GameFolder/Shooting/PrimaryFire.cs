@@ -9,6 +9,7 @@ public class PrimaryFire : MonoBehaviour
     [SerializeField] private GameObject shotPrefab;
 
     public float shotSpeed;
+    public float shotDecay;
     //[SerializeField] private Transform orient;
 
     private void Start()
@@ -23,7 +24,7 @@ public class PrimaryFire : MonoBehaviour
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * shotSpeed;
 
-        Destroy(bullet, 2f);
+        Destroy(bullet, shotDecay);
     }
 
 

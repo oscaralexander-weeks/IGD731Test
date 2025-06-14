@@ -3184,6 +3184,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5f6d716e-237f-4b58-9d90-b1af0ca0dd2c
     m_ActionName: Player/mouseLook[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794553161}
+        m_TargetAssemblyTypeName: PlayerControllerWASD, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5f1ef3f-5927-4f11-b550-d8dad67fb674
+    m_ActionName: Player/Shoot[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3256,6 +3272,8 @@ MonoBehaviour:
   firepoint: {fileID: 365798285}
   shotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
     type: 3}
+  shotSpeed: 25
+  shotDecay: 1
 --- !u!1 &1883361867
 GameObject:
   m_ObjectHideFlags: 0
