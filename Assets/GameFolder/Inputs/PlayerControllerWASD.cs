@@ -12,12 +12,12 @@ public class PlayerControllerWASD : MonoBehaviour
     public bool canMove;
 
     private PrimaryFire _primaryFire;
-    private SecondaryFire _secondaryFire;
+    private SecondaryShoot _secondaryFire;
 
     void Start()
     {
         _primaryFire = GetComponent<PrimaryFire>();
-        _secondaryFire = GetComponent<SecondaryFire>();
+        _secondaryFire = GetComponent<SecondaryShoot>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
