@@ -14,10 +14,8 @@ public class PlayerControllerWASD : MonoBehaviour
     [Header ("Weapons")]
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
 
-    [Header("Abilities")]
-    [SerializeField] private Transform abilitySpawn;
-    [SerializeField] private GameObject abilityPrefab;
-
+    [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
+    [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -48,19 +46,28 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         if (context.performed)
         {
-            Ability();
+            Ability(0);
         }
     }
 
-    public void Ability()
+    public void OnAbility2(InputAction.CallbackContext context)
     {
-        if(abilityPrefab != null && abilitySpawn != null)
+        if (context.performed)
         {
-            Instantiate(abilityPrefab, abilitySpawn.position, abilitySpawn.rotation);
+            Ability(1);
+        }
+    }
+
+    public void Ability(int index)
+    {
+        if(abilityPrefabs.Count > 0 && abilitySpawns.Count > 0)
+        {
+            Instantiate(abilityPrefabs[index], abilitySpawns[index].position, abilitySpawns[index].rotation);
         }
 
         Debug.Log("No Ability");
     }
+
 
     public void Shoot(int index)
     {

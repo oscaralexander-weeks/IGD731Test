@@ -24,7 +24,11 @@ public class Trap : MonoBehaviour
 
         yield return new WaitForSeconds(statusDuration);
 
-        enemy.HasStatusEffect = false;
+        if(enemy != null)
+        {
+            enemy.HasStatusEffect = false;
+        }
+
         Destroy(gameObject);
 
     }

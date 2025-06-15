@@ -3376,6 +3376,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 766b59cc-50dc-4878-b768-eaa42ec3022b
     m_ActionName: Player/Ability1[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794553161}
+        m_TargetAssemblyTypeName: PlayerControllerWASD, Assembly-CSharp
+        m_MethodName: OnAbility2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6d29c5c0-5896-48da-b1d9-fdf889dff4f6
+    m_ActionName: Player/Ability2[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3410,9 +3426,12 @@ MonoBehaviour:
   Weapons:
   - {fileID: 1794553166}
   - {fileID: 1794553165}
-  abilitySpawn: {fileID: 552192355}
-  abilityPrefab: {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3,
-    type: 3}
+  abilitySpawns:
+  - {fileID: 552192355}
+  - {fileID: 552192355}
+  abilityPrefabs:
+  - {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3, type: 3}
+  - {fileID: 4883048070006484800, guid: 67c2e93e70e3720418538a01a9c9e0a4, type: 3}
 --- !u!54 &1794553164
 Rigidbody:
   m_ObjectHideFlags: 0
