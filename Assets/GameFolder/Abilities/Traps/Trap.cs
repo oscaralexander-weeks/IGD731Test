@@ -5,6 +5,8 @@ using UnityEngine;
 public class Trap : MonoBehaviour
 {
     private Enemy enemy;
+    public float trapInitialization;
+    public float statusDuration;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +14,7 @@ public class Trap : MonoBehaviour
 
         if(enemy != null)
         {
-            StartCoroutine(WillThisWork());
+            StartCoroutine(TrapInitialization());
         }
     }
 
@@ -20,11 +22,18 @@ public class Trap : MonoBehaviour
     {
         enemy.HasStatusEffect = true;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(statusDuration);
 
         enemy.HasStatusEffect = false;
         Destroy(gameObject);
 
+    }
+
+    private IEnumerator TrapInitialization()
+    {
+        yield return new WaitForSeconds(trapInitialization);
+
+        StartCoroutine(WillThisWork());
     }
 
 }
