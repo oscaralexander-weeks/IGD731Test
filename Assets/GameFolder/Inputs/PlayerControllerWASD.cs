@@ -5,13 +5,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerControllerWASD : MonoBehaviour
 {
+    [Header("Movement")]
     public float speed;
     private Vector2 _move, _mouseLook;
     private Vector3 _rotationTarget;
-
     public bool canMove;
 
+    [Header ("Weapons")]
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
+
+    [Header("Abilities")]
+    [SerializeField] private Transform abilitySpawn;
+    [SerializeField] private GameObject abilityPrefab;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -37,6 +42,24 @@ public class PlayerControllerWASD : MonoBehaviour
         {
             Shoot(1);
         }
+    }
+
+    public void OnAbility(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Ability();
+        }
+    }
+
+    public void Ability()
+    {
+        if(abilityPrefab != null && abilitySpawn != null)
+        {
+            Instantiate(abilityPrefab, abilitySpawn.position, abilitySpawn.rotation);
+        }
+
+        Debug.Log("No Ability");
     }
 
     public void Shoot(int index)
