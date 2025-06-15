@@ -15,6 +15,15 @@ public class PlayerControllerWASD : MonoBehaviour
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
     [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
     [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
+
+    public Color sphereColor = Color.yellow;
+    public float castRadius;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = sphereColor;
+        Gizmos.DrawWireSphere(abilitySpawns[1].position, castRadius);
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -70,7 +79,7 @@ public class PlayerControllerWASD : MonoBehaviour
 
     public void CheckAOE()
     {
-        Collider[] colliders = Physics.OverlapSphere(abilitySpawns[0].position, 4f);
+        Collider[] colliders = Physics.OverlapSphere(abilitySpawns[1].position, castRadius);
 
         foreach (Collider c in colliders)
         {

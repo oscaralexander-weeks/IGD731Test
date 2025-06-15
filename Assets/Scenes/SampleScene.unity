@@ -2600,6 +2600,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363110827}
   m_CullTransparentMesh: 1
+--- !u!1 &1377417343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377417344}
+  m_Layer: 6
+  m_Name: AbilitySpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1377417344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377417343}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 6.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1794553155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431107335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,6 +3277,7 @@ Transform:
   - {fileID: 1039311536}
   - {fileID: 365798285}
   - {fileID: 552192355}
+  - {fileID: 1377417344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1794553156
@@ -3428,10 +3460,12 @@ MonoBehaviour:
   - {fileID: 1794553165}
   abilitySpawns:
   - {fileID: 552192355}
-  - {fileID: 552192355}
+  - {fileID: 1377417344}
   abilityPrefabs:
   - {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3, type: 3}
   - {fileID: 3324559705103228237, guid: a1a9abcc2e77927449d8f25c9f6bbf4f, type: 3}
+  sphereColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  castRadius: 2
 --- !u!54 &1794553164
 Rigidbody:
   m_ObjectHideFlags: 0
