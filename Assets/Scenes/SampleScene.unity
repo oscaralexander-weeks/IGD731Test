@@ -3431,7 +3431,7 @@ MonoBehaviour:
   - {fileID: 552192355}
   abilityPrefabs:
   - {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3, type: 3}
-  - {fileID: 4883048070006484800, guid: 67c2e93e70e3720418538a01a9c9e0a4, type: 3}
+  - {fileID: 3324559705103228237, guid: a1a9abcc2e77927449d8f25c9f6bbf4f, type: 3}
 --- !u!54 &1794553164
 Rigidbody:
   m_ObjectHideFlags: 0

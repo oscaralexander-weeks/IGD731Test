@@ -13,7 +13,6 @@ public class PlayerControllerWASD : MonoBehaviour
 
     [Header ("Weapons")]
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
-
     [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
     [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
     public void OnMove(InputAction.CallbackContext context)
@@ -54,7 +53,7 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         if (context.performed)
         {
-            Ability(1);
+            StartCoroutine(AttackSequence());
         }
     }
 
@@ -65,7 +64,31 @@ public class PlayerControllerWASD : MonoBehaviour
             Instantiate(abilityPrefabs[index], abilitySpawns[index].position, abilitySpawns[index].rotation);
         }
 
-        Debug.Log("No Ability");
+        //Debug.Log("No Ability");
+    }
+
+
+    public void CheckAOE()
+    {
+        Collider[] colliders = Physics.OverlapSphere(abilitySpawns[0].position, 4f);
+
+        foreach (Collider c in colliders)
+        {
+            if (c.GetComponent<Enemy>())
+            {
+                c.GetComponent<Enemy>().TakeDamage(50);
+            }
+        }
+    }
+
+    private IEnumerator AttackSequence()
+    {
+        yield return new WaitForSeconds(0.25f);
+        //start particles
+        CheckAOE();
+        yield return new WaitForSeconds(1f);
+        //end particles
+
     }
 
 
