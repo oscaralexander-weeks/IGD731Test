@@ -21,7 +21,7 @@ public class SecondaryShoot : BaseDefaultWeapon
     private void Start()
     {
         //InvokeRepeating("LeftClickShoot", 1, 3);
-        _movement = GetComponent<PlayerControllerWASD>();
+        _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerWASD>();
         CooldownTimer = Cooldown;
     }
 
@@ -42,7 +42,6 @@ public class SecondaryShoot : BaseDefaultWeapon
 
     public IEnumerator ShootRoutine()
     {
-
         //stop movement 
         if (_movement != null)
         {

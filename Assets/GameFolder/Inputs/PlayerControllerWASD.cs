@@ -11,19 +11,7 @@ public class PlayerControllerWASD : MonoBehaviour
     private Vector3 _rotationTarget;
     public bool canMove;
 
-    [Header ("Weapons")]
-    public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
-    [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
-    [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
-
-    public Color sphereColor = Color.yellow;
-    public float castRadius;
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = sphereColor;
-        Gizmos.DrawWireSphere(abilitySpawns[1].position, castRadius);
-    }
+  
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -32,78 +20,6 @@ public class PlayerControllerWASD : MonoBehaviour
     public void OnMouseLook(InputAction.CallbackContext context)
     {
         _mouseLook = context.ReadValue<Vector2>();
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Shoot(0);
-        }
-    }
-
-    public void OnShoot2(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Shoot(1);
-        }
-    }
-
-    public void OnAbility(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Ability(0);
-        }
-    }
-
-    public void OnAbility2(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            StartCoroutine(AttackSequence());
-        }
-    }
-
-    public void Ability(int index)
-    {
-        if(abilityPrefabs.Count > 0 && abilitySpawns.Count > 0)
-        {
-            Instantiate(abilityPrefabs[index], abilitySpawns[index].position, abilitySpawns[index].rotation);
-        }
-
-        //Debug.Log("No Ability");
-    }
-
-
-    public void CheckAOE()
-    {
-        Collider[] colliders = Physics.OverlapSphere(abilitySpawns[1].position, castRadius);
-
-        foreach (Collider c in colliders)
-        {
-            if (c.GetComponent<Enemy>())
-            {
-                c.GetComponent<Enemy>().TakeDamage(50);
-            }
-        }
-    }
-
-    private IEnumerator AttackSequence()
-    {
-        yield return new WaitForSeconds(0.25f);
-        //start particles
-        CheckAOE();
-        yield return new WaitForSeconds(1f);
-        //end particles
-
-    }
-
-
-    public void Shoot(int index)
-    {
-        Weapons[index].Shoot();
     }
 
     // Start is called before the first frame update
