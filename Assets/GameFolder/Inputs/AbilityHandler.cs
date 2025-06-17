@@ -13,7 +13,7 @@ public class AbilityHandler : MonoBehaviour
 
     private Transform testTransform;
 
-    public Canvas abilityCanvas;
+    //public Canvas abilityCanvas;
     //public Image abilityRange;
     public float maxAbilityDistance = 7;
 
@@ -28,9 +28,6 @@ public class AbilityHandler : MonoBehaviour
     private void Start()
     {
         testTransform = abilitySpawns[1];
-
-        //abilityCanvas.enabled = false;
-        //abilityRange.enabled = false;
     }
 
 
@@ -43,6 +40,7 @@ public class AbilityHandler : MonoBehaviour
 
     private void AbilityCanvas()
     {
+
         int layerMask = ~LayerMask.GetMask("Player");
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
@@ -58,9 +56,8 @@ public class AbilityHandler : MonoBehaviour
         distance = Mathf.Min(distance, maxAbilityDistance);
 
         var newHitPos = transform.position + hitPosDir * distance;
-        abilityCanvas.transform.position = (newHitPos);
+        //abilityCanvas.transform.position = (newHitPos);
         testTransform.position = (newHitPos);
-
     }
 
     public void OnAbility(InputAction.CallbackContext context)
@@ -75,7 +72,6 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("1");
             StartCoroutine(AttackSequence());
         }
     }
@@ -102,8 +98,6 @@ public class AbilityHandler : MonoBehaviour
 
     public void CheckAOE()
     {
-        Debug.Log("2");
-
         Collider[] colliders = Physics.OverlapSphere(testTransform.position, castRadius);
 
         foreach (Collider c in colliders)
