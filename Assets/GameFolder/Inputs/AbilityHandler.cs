@@ -15,7 +15,10 @@ public class AbilityHandler : MonoBehaviour
 
     //public Canvas abilityCanvas;
     //public Image abilityRange;
+    [Header("AOESpell")]
     public float maxAbilityDistance = 7;
+    [SerializeField] private ParticleSystem damageParticles;
+    private ParticleSystem insatanceDamageParticles;
 
     private Vector3 pos;
     private Ray ray;
@@ -113,9 +116,19 @@ public class AbilityHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(0.25f);
         //start particles
+        SpawnDamageParticles();
         CheckAOE();
         yield return new WaitForSeconds(1f);
         //end particles
 
     }
+
+    private void SpawnDamageParticles()
+    {
+        if(damageParticles != null)
+        {
+            insatanceDamageParticles = Instantiate(damageParticles, testTransform);
+        }
+    }
+
 }
