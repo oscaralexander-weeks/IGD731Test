@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -12,6 +13,10 @@ public class AbilityHandler : MonoBehaviour
     [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
 
     private Transform testTransform;
+
+    [Header("Events")]
+    public UnityEvent onStyleIncrease;
+    public UnityEvent onStyleDecrease;
 
     //public Canvas abilityCanvas;
     //public Image abilityRange;
@@ -108,6 +113,7 @@ public class AbilityHandler : MonoBehaviour
             if (c.GetComponent<Enemy>())
             {
                 c.GetComponent<Enemy>().TakeDamage(50);
+                onStyleIncrease?.Invoke();
             }
         }
     }
