@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityBaseClass : ScriptableObject
+public class AbilityBaseClass : MonoBehaviour
 {
     [Header("Ability")]
     public float AbilityCooldown;
