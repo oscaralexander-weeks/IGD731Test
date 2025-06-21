@@ -58,6 +58,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Item1",
+                    "type": "Button",
+                    "id": "df529cbf-08ab-4bd3-9f93-7a62676bf95a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Item2",
+                    "type": "Button",
+                    "id": "92b19541-e272-49c8-96c3-bd3f138bd4a1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -170,36 +188,10 @@
                     "action": "Ability2",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Inventory",
-            "id": "8d1709b3-7897-49dd-a5f4-a174712e04f7",
-            "actions": [
-                {
-                    "name": "Item1",
-                    "type": "Button",
-                    "id": "08b38aa6-0cdc-4c1d-9f31-42fc370e6e50",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
-                    "name": "Item2",
-                    "type": "Button",
-                    "id": "a089347f-d3e0-46bd-9f83-dc5c61d2596d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "1b2a6612-edca-407e-bdac-29c8eee949d3",
+                    "id": "62edc5a1-a4f5-4c42-a39a-045c91af8827",
                     "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
@@ -210,7 +202,7 @@
                 },
                 {
                     "name": "",
-                    "id": "5af8accd-7e04-4085-b4dd-404beed98745",
+                    "id": "aa8ce152-b752-4b58-b4a9-ad998bf12667",
                     "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",

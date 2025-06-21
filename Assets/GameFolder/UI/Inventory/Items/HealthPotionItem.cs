@@ -8,6 +8,7 @@ public class HealthPotionItem : ItemBaseClass
     public FloatReference amount;
     public override void Use()
     {
+        Debug.Log("use");
         if(stackSize.Value > 0 && HP.Value < 100)
         {
             HP.ApplyChange(amount);
