@@ -43,7 +43,9 @@ public class AbilityHandler : MonoBehaviour
     {
         testTransform = abilitySpawns[1];
         layerAsLayerMask = (1 << layer);
+        //HARD CODED EASE OF USE MUST CHANGE ON REWRITE IN OFFICIAL PROJECT
         abilities[0].AbilityCount = 5;
+        //abilities[0].AbilityPrefab = abilityPrefabs[1];
     }
 
 
@@ -94,6 +96,12 @@ public class AbilityHandler : MonoBehaviour
                 StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
             }
         }
+
+        if (abilities[index] == null)
+        {
+            Debug.Log("this");
+        }
+
     }
 
     public void OnAbility2(InputAction.CallbackContext context)
