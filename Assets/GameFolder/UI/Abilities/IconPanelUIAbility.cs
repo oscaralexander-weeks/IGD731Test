@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class IconPanelUIAbility : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //ability superclass
+
+    public TextMeshProUGUI cooldown;
+    public TextMeshProUGUI itemName;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisplayIcon()
     {
-        
+        //null check 
     }
 }
