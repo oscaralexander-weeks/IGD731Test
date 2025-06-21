@@ -24,6 +24,8 @@ public class AbilityHandler : MonoBehaviour
     public float maxAbilityDistance = 7;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem insatanceDamageParticles;
+    [SerializeField] private int layer = 8;
+    private int layerAsLayerMask;
 
     private Vector3 pos;
     private Ray ray;
@@ -36,6 +38,7 @@ public class AbilityHandler : MonoBehaviour
     private void Start()
     {
         testTransform = abilitySpawns[1];
+        layerAsLayerMask = (1 << layer);
     }
 
 
@@ -106,7 +109,8 @@ public class AbilityHandler : MonoBehaviour
 
     public void CheckAOE()
     {
-        Collider[] colliders = Physics.OverlapSphere(testTransform.position, castRadius);
+        Collider[] colliders = Physics.OverlapSphere(testTransform.position, castRadius, layerAsLayerMask);
+        int hits = 0;
 
         foreach (Collider c in colliders)
         {
@@ -114,7 +118,13 @@ public class AbilityHandler : MonoBehaviour
             {
                 c.GetComponent<Enemy>().TakeDamage(50);
                 onStyleIncrease?.Invoke();
+                hits++;
             }
+        }
+
+        if(hits == 0)
+        {
+            onStyleDecrease?.Invoke();
         }
     }
 

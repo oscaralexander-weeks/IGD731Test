@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 323705338}
   - component: {fileID: 323705343}
   - component: {fileID: 323705344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3970,6 +3970,7 @@ MonoBehaviour:
   maxAbilityDistance: 7
   damageParticles: {fileID: 2504214343621411456, guid: 3ed0d324122d7b24eaec75c55c74aafc,
     type: 3}
+  layer: 8
   sphereColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   castRadius: 2
 --- !u!1 &1883361867
