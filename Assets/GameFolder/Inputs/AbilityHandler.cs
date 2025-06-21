@@ -11,6 +11,7 @@ public class AbilityHandler : MonoBehaviour
     [Header("Abilities")]
     [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
     [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
+    [SerializeField] private List<AbilityBaseClass> abilities = new List<AbilityBaseClass>();
 
     private Transform testTransform;
 
@@ -39,7 +40,7 @@ public class AbilityHandler : MonoBehaviour
     private void Start()
     {
         testTransform = abilitySpawns[1];
-        layerAsLayerMask = (1 << layer);
+        layerAsLayerMask = (1 << layer);        
     }
 
 
@@ -76,7 +77,15 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            Ability(0);
+            UseAbility(0);
+        }
+    }
+
+    private void UseAbility(int index)
+    {
+        if(abilities.Count > 0 && abilitySpawns.Count > 0 && abilities[index] != null)
+        {
+            abilities[index].Ability(abilitySpawns[index]);
         }
     }
 
@@ -95,16 +104,6 @@ public class AbilityHandler : MonoBehaviour
             Gizmos.color = Color.yellow;
             Gizmos.DrawSphere(testTransform.position, castRadius);
         }
-    }
-
-    public void Ability(int index)
-    {
-        if (abilityPrefabs.Count > 0 && abilitySpawns.Count > 0)
-        {
-            Instantiate(abilityPrefabs[index], abilitySpawns[index].position, abilitySpawns[index].rotation);
-        }
-
-        //Debug.Log("No Ability");
     }
 
 
