@@ -45,11 +45,11 @@ public class SecondaryShoot : BaseDefaultWeapon
         //stop movement 
         if (_movement != null)
         {
-            _movement.canMove = false;
+            _movement.SpeedMultiplyer = 0.5f;
             //start shooting coroutine
             yield return StartCoroutine(OtherShootRoutine());
 
-            _movement.canMove = true;
+            _movement.SpeedMultiplyer = 1;
         }
 
         //start movement

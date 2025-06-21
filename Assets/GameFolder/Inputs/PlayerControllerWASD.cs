@@ -7,6 +7,7 @@ public class PlayerControllerWASD : MonoBehaviour
 {
     [Header("Movement")]
     public float speed;
+    public float SpeedMultiplyer = 1;
     private Vector2 _move, _mouseLook;
     private Vector3 _rotationTarget;
     public bool canMove;
@@ -51,7 +52,7 @@ public class PlayerControllerWASD : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
         }
 
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
     }
 
     public void MovePlayerWithAim()
@@ -71,7 +72,7 @@ public class PlayerControllerWASD : MonoBehaviour
         {
             Vector3 movement = new Vector3(_move.x, 0f, _move.y);
 
-            transform.Translate(movement * speed * Time.deltaTime, Space.World);
+            transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
         }
 
 
