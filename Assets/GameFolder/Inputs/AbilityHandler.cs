@@ -25,8 +25,10 @@ public class AbilityHandler : MonoBehaviour
     public float maxAbilityDistance = 7;
     public int AOESpellDamage;
     [SerializeField] private ParticleSystem damageParticles;
-    private ParticleSystem insatanceDamageParticles;
     [SerializeField] private int layer = 8;
+    [SerializeField] private int AOECooldown = 8;
+    private bool AOEIsOnCooldown;
+    private ParticleSystem insatanceDamageParticles;
     private int layerAsLayerMask;
 
     private Vector3 pos;
@@ -98,7 +100,11 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            StartCoroutine(AttackSequence());
+            if (!AOEIsOnCooldown)
+            {
+                StartCoroutine(AttackSequence());
+                StartCoroutine(Cooldown(AOECooldown));
+            }
         }
     }
 
@@ -160,6 +166,13 @@ public class AbilityHandler : MonoBehaviour
         ability.IsOnCooldown = true;
         yield return new WaitForSeconds(cooldown);
         ability.IsOnCooldown = false;
+    }
+
+    private IEnumerator Cooldown(float cooldown)
+    {
+        AOEIsOnCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        AOEIsOnCooldown = false;
     }
 
 }
