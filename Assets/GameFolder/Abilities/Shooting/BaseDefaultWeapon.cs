@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BaseDefaultWeapon : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class BaseDefaultWeapon : MonoBehaviour
     [Header("Timers")]
     public bool IsOnCooldown;
     public bool IsShooting;
-    
 
     public virtual void Shoot()
     {

@@ -22,6 +22,7 @@ public class AbilityHandler : MonoBehaviour
     //public Image abilityRange;
     [Header("AOESpell")]
     public float maxAbilityDistance = 7;
+    public int AOESpellDamage;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem insatanceDamageParticles;
     [SerializeField] private int layer = 8;
@@ -114,11 +115,14 @@ public class AbilityHandler : MonoBehaviour
 
         foreach (Collider c in colliders)
         {
-            if (c.GetComponent<Enemy>())
+            if (c.TryGetComponent<Enemy>(out Enemy enemy))
             {
-                c.GetComponent<Enemy>().TakeDamage(50);
-                onStyleIncrease?.Invoke();
-                hits++;
+                if(enemy != null)
+                {
+                    enemy.TakeDamage(AOESpellDamage);
+                    onStyleIncrease?.Invoke();
+                    hits++;
+                }
             }
         }
 
