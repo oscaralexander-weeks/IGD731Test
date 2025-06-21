@@ -88,7 +88,7 @@ public class AbilityHandler : MonoBehaviour
         {
             if (!abilities[index].IsOnCooldown)
             {
-                abilities[index].Ability(abilitySpawns[index]);
+                abilities[index].Ability(testTransform);
                 StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
             }
         }
@@ -157,7 +157,6 @@ public class AbilityHandler : MonoBehaviour
 
     private IEnumerator Cooldown(AbilityBaseClass ability, float cooldown)
     {
-        Debug.Log("on");
         ability.IsOnCooldown = true;
         yield return new WaitForSeconds(cooldown);
         ability.IsOnCooldown = false;

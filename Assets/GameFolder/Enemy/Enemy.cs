@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void OnEnable()
     {
         runtimeSet.Add(this);
-        Debug.Log(enemyName);
+        //Debug.Log(enemyName);
     }
 
     private void OnDisable()
