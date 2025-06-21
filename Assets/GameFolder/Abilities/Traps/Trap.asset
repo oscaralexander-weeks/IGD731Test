@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc0be95d49d2684687ea05b4f9eb7bf, type: 3}
   m_Name: Trap
   m_EditorClassIdentifier: 
-  Cooldown: 3
-  abilityCount: 5
+  AbilityCooldown: 5
+  AbilityCount: 3
+  IsOnCooldown: 0
   AbilityPrefab: {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3,
     type: 3}
