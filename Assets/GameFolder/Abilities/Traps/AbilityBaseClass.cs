@@ -5,8 +5,9 @@ using UnityEngine;
 public class AbilityBaseClass : ScriptableObject
 {
     [Header("Ability")]
-    public int Cooldown;
-    public int abilityCount;
+    public float AbilityCooldown;
+    public int AbilityCount;
+    public bool IsOnCooldown;
     public GameObject AbilityPrefab;
     //public Transform AbilitySpawnPoint;
 

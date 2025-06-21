@@ -22,6 +22,10 @@ public class AbilityTrap : AbilityBaseClass
 
     public override void Ability(Transform abilitySpawnPoint)
     {
-        Instantiate(AbilityPrefab, abilitySpawnPoint.position, abilitySpawnPoint.rotation);
+        if(AbilityCount > 0)
+        {
+            Instantiate(AbilityPrefab, abilitySpawnPoint.position, abilitySpawnPoint.rotation);
+            AbilityCount--;
+        }
     }
 }

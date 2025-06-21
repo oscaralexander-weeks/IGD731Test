@@ -40,7 +40,8 @@ public class AbilityHandler : MonoBehaviour
     private void Start()
     {
         testTransform = abilitySpawns[1];
-        layerAsLayerMask = (1 << layer);        
+        layerAsLayerMask = (1 << layer);
+        abilities[0].AbilityCount = 5;
     }
 
 
@@ -85,7 +86,11 @@ public class AbilityHandler : MonoBehaviour
     {
         if(abilities.Count > 0 && abilitySpawns.Count > 0 && abilities[index] != null)
         {
-            abilities[index].Ability(abilitySpawns[index]);
+            if (!abilities[index].IsOnCooldown)
+            {
+                abilities[index].Ability(abilitySpawns[index]);
+                StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
+            }
         }
     }
 
@@ -148,6 +153,14 @@ public class AbilityHandler : MonoBehaviour
         {
             insatanceDamageParticles = Instantiate(damageParticles, testTransform);
         }
+    }
+
+    private IEnumerator Cooldown(AbilityBaseClass ability, float cooldown)
+    {
+        Debug.Log("on");
+        ability.IsOnCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        ability.IsOnCooldown = false;
     }
 
 }
