@@ -18,6 +18,11 @@ public class StyleManager : MonoBehaviour
             style.Value -= Time.deltaTime;
             CheckStyle(styleSlider);
         }
+
+        if(style.Value < 0)
+        {
+            style.SetValue(0);
+        }
     }
 
     private void CheckStyle(Slider style)
