@@ -9,51 +9,31 @@ using UnityEngine.UI;
 public class AbilityHandler : MonoBehaviour
 {
     [Header("Abilities")]
-    [SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
-    [SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
     [SerializeField] private List<AbilityBaseClass> abilities = new List<AbilityBaseClass>();
 
-    private Transform testTransform;
+    [SerializeField] private Transform testTransform;
 
+    //Currently not in use 
     [Header("Events")]
     public UnityEvent onStyleIncrease;
     public UnityEvent onStyleDecrease;
 
-    //public Canvas abilityCanvas;
-    //public Image abilityRange;
     [Header("AOESpell")]
     public float maxAbilityDistance = 7;
-    public int AOESpellDamage;
-    [SerializeField] private ParticleSystem damageParticles;
-    [SerializeField] private int layer = 8;
-    [SerializeField] private int AOECooldown = 8;
-    private bool AOEIsOnCooldown;
-    private ParticleSystem insatanceDamageParticles;
-    private int layerAsLayerMask;
 
     private Vector3 pos;
     private Ray ray;
     private RaycastHit hit;
 
-
     public Color sphereColor = Color.yellow;
     public float castRadius;
-
-    private void Start()
-    {
-        testTransform = abilitySpawns[1];
-        layerAsLayerMask = (1 << layer);
-        //HARD CODED EASE OF USE MUST CHANGE ON REWRITE IN OFFICIAL PROJECT
-        abilities[0].AbilityCount = 5;
-        //abilities[0].AbilityPrefab = abilityPrefabs[1];
-    }
-
 
     private void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         AbilityCanvas();
+        AbilityCooldown(abilities); 
     }
 
     private void AbilityCanvas()
@@ -74,7 +54,6 @@ public class AbilityHandler : MonoBehaviour
         distance = Mathf.Min(distance, maxAbilityDistance);
 
         var newHitPos = transform.position + hitPosDir * distance;
-        //abilityCanvas.transform.position = (newHitPos);
         testTransform.position = (newHitPos);
     }
 
@@ -88,7 +67,7 @@ public class AbilityHandler : MonoBehaviour
 
     private void UseAbility(int index)
     {
-        if(abilities.Count > 0 && abilitySpawns.Count > 0 && abilities[index] != null)
+        if(abilities.Count > 0 && abilities[index] != null)
         {
             if (!abilities[index].IsOnCooldown)
             {
@@ -108,11 +87,7 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            if (!AOEIsOnCooldown)
-            {
-                StartCoroutine(AttackSequence());
-                StartCoroutine(Cooldown(AOECooldown));
-            }
+            UseAbility(1);
         }
     }
 
@@ -125,50 +100,6 @@ public class AbilityHandler : MonoBehaviour
         }
     }
 
-
-    public void CheckAOE()
-    {
-        Collider[] colliders = Physics.OverlapSphere(testTransform.position, castRadius, layerAsLayerMask);
-        int hits = 0;
-
-        foreach (Collider c in colliders)
-        {
-            if (c.TryGetComponent<Enemy>(out Enemy enemy))
-            {
-                if(enemy != null)
-                {
-                    enemy.TakeDamage(AOESpellDamage);
-                    onStyleIncrease?.Invoke();
-                    hits++;
-                }
-            }
-        }
-
-        if(hits == 0)
-        {
-            onStyleDecrease?.Invoke();
-        }
-    }
-
-    private IEnumerator AttackSequence()
-    {
-        yield return new WaitForSeconds(0.25f);
-        //start particles
-        SpawnDamageParticles();
-        CheckAOE();
-        yield return new WaitForSeconds(1f);
-        //end particles
-
-    }
-
-    private void SpawnDamageParticles()
-    {
-        if(damageParticles != null)
-        {
-            insatanceDamageParticles = Instantiate(damageParticles, testTransform);
-        }
-    }
-
     private IEnumerator Cooldown(AbilityBaseClass ability, float cooldown)
     {
         ability.IsOnCooldown = true;
@@ -176,11 +107,21 @@ public class AbilityHandler : MonoBehaviour
         ability.IsOnCooldown = false;
     }
 
-    private IEnumerator Cooldown(float cooldown)
-    {
-        AOEIsOnCooldown = true;
-        yield return new WaitForSeconds(cooldown);
-        AOEIsOnCooldown = false;
-    }
 
+    private void AbilityCooldown(List<AbilityBaseClass> abilities)
+    {
+        foreach (AbilityBaseClass ability in abilities)
+        {
+            if (ability.IsOnCooldown)
+            {
+                ability.AbilityCooldownTimer -= Time.deltaTime;
+
+                if (ability.AbilityCooldownTimer < 0.01f)
+                {
+                    ability.IsOnCooldown = false;
+                    ability.AbilityCooldownTimer = ability.AbilityCooldown;
+                }
+            }
+        }
+    }
 }

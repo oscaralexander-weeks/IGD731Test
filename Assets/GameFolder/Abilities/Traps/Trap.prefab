@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2913459342281567435}
   - component: {fileID: 5458824171245151618}
   - component: {fileID: 4552926039088191238}
-  - component: {fileID: 1388156783254112045}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -123,19 +122,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapInitialization: 0.4
   statusDuration: 2
---- !u!114 &1388156783254112045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5358192789477117397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc0be95d49d2684687ea05b4f9eb7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityCooldown: 5
-  AbilityCount: 5
-  IsOnCooldown: 0
-  AbilityPrefab: {fileID: 5358192789477117397}

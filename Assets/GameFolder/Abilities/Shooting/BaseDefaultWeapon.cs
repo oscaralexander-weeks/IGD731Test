@@ -8,6 +8,7 @@ public class BaseDefaultWeapon : MonoBehaviour
     [Header("References")]
     public Transform Firepoint;
     public GameObject ShotPrefab;
+    public string WeaponName;
 
     [Header("Counts")]
     public int Ammo;
