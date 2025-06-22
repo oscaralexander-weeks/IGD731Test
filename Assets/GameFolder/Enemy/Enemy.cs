@@ -5,13 +5,19 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    [Header("Systems")]
     public EnemyRuntimeSet runtimeSet;
-    public string enemyName;
-
-    public int unitHealth;
     public UnityEvent onUnitDeath;
+    [SerializeField] private ParticleSystem damageParticles;
+    private ParticleSystem instanceDamageParticles;
 
+
+    [Header("EnemyStats")]
+    public string enemyName;
+    public int unitHealth;
     public bool HasStatusEffect;
+
+
 
     private void OnEnable()
     {
@@ -27,6 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         unitHealth -= damage;
+        SpawnDamageParticles(gameObject.transform);
         if(unitHealth <= 0)
         {
             Die();
@@ -37,5 +44,13 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         onUnitDeath?.Invoke();
         Destroy(gameObject);
+    }
+
+    private void SpawnDamageParticles(Transform abiltySpawnPoint)
+    {
+        if (damageParticles != null)
+        {
+            instanceDamageParticles = Instantiate(damageParticles, abiltySpawnPoint);
+        }
     }
 }
