@@ -92,6 +92,14 @@ public class AbilityHandler : MonoBehaviour
         }
     }
 
+    public void OnAbility3(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            UseAbility(2);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if(testTransform != null)
