@@ -7,9 +7,6 @@ public class WeaponsHandler : MonoBehaviour
 {
     [Header("Weapons")]
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
-    //[SerializeField] private List<Transform> abilitySpawns = new List<Transform>();
-    //[SerializeField] private List<GameObject> abilityPrefabs = new List<GameObject>();
-
 
     public void OnShoot(InputAction.CallbackContext context)
     {

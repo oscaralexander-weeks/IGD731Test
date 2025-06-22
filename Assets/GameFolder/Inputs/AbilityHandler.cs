@@ -72,7 +72,8 @@ public class AbilityHandler : MonoBehaviour
             if (!abilities[index].IsOnCooldown)
             {
                 abilities[index].Ability(testTransform);
-                StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
+                abilities[index].IsOnCooldown = true;
+                //StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
             }
         }
 
