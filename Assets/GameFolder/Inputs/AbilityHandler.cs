@@ -115,12 +115,12 @@ public class AbilityHandler : MonoBehaviour
         {
             if (ability.IsOnCooldown)
             {
-                ability.AbilityCooldownTimer -= Time.deltaTime;
+                ability.CooldownTimer -= Time.deltaTime;
 
-                if (ability.AbilityCooldownTimer < 0.01f)
+                if (ability.CooldownTimer < 0.01f)
                 {
                     ability.IsOnCooldown = false;
-                    ability.AbilityCooldownTimer = ability.AbilityCooldown;
+                    ability.CooldownTimer = ability.Cooldown;
                 }
             }
         }

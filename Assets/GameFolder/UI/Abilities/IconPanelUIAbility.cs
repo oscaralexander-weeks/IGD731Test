@@ -41,15 +41,15 @@ public class IconPanelUIAbility : MonoBehaviour
 
         if(Ability != null)
         {
-            itemName.text = Ability.AbilityName;
+            itemName.text = Ability.Name;
 
-            if(Ability.AbilityCooldown == Ability.AbilityCooldownTimer)
+            if(Ability.Cooldown == Ability.CooldownTimer)
             {
                 cooldown.text = "Ready";
             }
             else
             {
-                cooldown.text = Ability.AbilityCooldownTimer.ToString("F0");
+                cooldown.text = Ability.CooldownTimer.ToString("F0");
             }
         }
     }

@@ -3548,12 +3548,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e821066e6db9c904b89395b9b0537a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityCooldown: 5
-  AbilityCooldownTimer: 5
-  AbilityCount: 5
+  Name: AOE
+  Cooldown: 5
+  CooldownTimer: 5
   IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
+  AbilityCount: 5
   AbilityPrefab: {fileID: 0}
-  AbilityName: AOE
   onStyleIncrease:
     m_PersistentCalls:
       m_Calls:
@@ -4245,13 +4248,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc0be95d49d2684687ea05b4f9eb7bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityCooldown: 5
-  AbilityCooldownTimer: 5
-  AbilityCount: 5
+  Name: Trap
+  Cooldown: 5
+  CooldownTimer: 5
   IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
+  AbilityCount: 5
   AbilityPrefab: {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3,
     type: 3}
-  AbilityName: Trap
 --- !u!1 &1249959998
 GameObject:
   m_ObjectHideFlags: 0
