@@ -4395,16 +4395,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d228b282ce6c3246b658d0a93430d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Primary
+  Cooldown: 1.5
+  CooldownTimer: 0
+  IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
   Firepoint: {fileID: 365798285}
   ShotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
     type: 3}
-  WeaponName: Primary
   Ammo: 0
-  Cooldown: 1.5
-  CooldownTimer: 0
   ShotSpeed: 35
   ShotDecay: 1
-  IsOnCooldown: 0
   IsShooting: 0
 --- !u!1 &1431107335
 GameObject:
@@ -4510,16 +4513,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8278935fd1c7ac14a9c8503cb31d0c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Secondary
+  Cooldown: 5
+  CooldownTimer: 0
+  IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
   Firepoint: {fileID: 365798285}
   ShotPrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
     type: 3}
-  WeaponName: Secondary
   Ammo: 0
-  Cooldown: 5
-  CooldownTimer: 0
   ShotSpeed: 25
   ShotDecay: 1
-  IsOnCooldown: 0
   IsShooting: 0
 --- !u!1 &1453307508
 GameObject:

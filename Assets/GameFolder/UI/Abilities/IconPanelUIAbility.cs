@@ -26,7 +26,7 @@ public class IconPanelUIAbility : MonoBehaviour
         //null check 
         if(Weapon != null)
         {
-            itemName.text = Weapon.WeaponName;
+            itemName.text = Weapon.Name;
 
             if (Weapon.Cooldown == Weapon.CooldownTimer)
             {
