@@ -28,6 +28,8 @@ public class PrimaryShoot : BaseDefaultWeapon
     {
         if (!IsOnCooldown)
         {
+            OnFire?.Invoke();
+
             var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
 
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * ShotSpeed;
