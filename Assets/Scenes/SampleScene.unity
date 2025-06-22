@@ -4692,8 +4692,8 @@ MonoBehaviour:
   ShotPrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
     type: 3}
   Ammo: 0
-  ShotSpeed: 25
-  ShotDecay: 1
+  ShotSpeed: 30
+  ShotDecay: 0.3
   IsShooting: 0
 --- !u!1 &1453307508
 GameObject:
