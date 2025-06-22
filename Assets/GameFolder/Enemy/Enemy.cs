@@ -11,13 +11,10 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem instanceDamageParticles;
 
-
     [Header("EnemyStats")]
     public string enemyName;
     public int unitHealth;
     public bool HasStatusEffect;
-
-
 
     private void OnEnable()
     {
