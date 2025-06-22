@@ -4170,10 +4170,10 @@ MonoBehaviour:
     type: 3}
   WeaponName: Primary
   Ammo: 0
-  Cooldown: 0.5
+  Cooldown: 1.5
   CooldownTimer: 0
-  ShotSpeed: 25
-  ShotDecay: 0.5
+  ShotSpeed: 35
+  ShotDecay: 1
   IsOnCooldown: 0
   IsShooting: 0
 --- !u!1 &1431107335
