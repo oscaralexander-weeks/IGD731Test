@@ -7,17 +7,19 @@ public class ProjectBaseClass : MonoBehaviour
 {
     public UnityEvent OnProjectileHit;
     public int damage;
+    //public float DestroyTime;
 
+
+    //private Coroutine _returnToPoolTimerCoroutine;
 
     [Header("Style Events")]
     public UnityEvent OnStyleIncrease;
     public UnityEvent OnStyleDecrease;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
+        //_returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
         Physics.IgnoreLayerCollision(0, 7);
-        //OnStyleDecrease?.Invoke();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,5 +34,17 @@ public class ProjectBaseClass : MonoBehaviour
         }
 
     }
+
+    //private IEnumerator ReturnToPoolAfterTime()
+    //{
+    //    float elapsedTime = 0f;
+    //    while(elapsedTime < DestroyTime)
+    //    {
+    //        elapsedTime += Time.deltaTime;
+    //        yield return null;
+    //    }
+
+    //    ObjectPoolManager.ReturnObjectToPool(gameObject);
+    //}
 
 }
