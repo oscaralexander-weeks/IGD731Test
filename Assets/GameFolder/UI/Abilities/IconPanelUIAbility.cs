@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class IconPanelUIAbility : MonoBehaviour
 {
-    public AbilityBaseClass Ability;
-    public BaseDefaultWeapon Weapon;
+    public AbilitiesSuperclass Ability;
+    //public BaseDefaultWeapon Weapon;
 
     public TextMeshProUGUI cooldown;
     public TextMeshProUGUI itemName;
@@ -23,22 +23,6 @@ public class IconPanelUIAbility : MonoBehaviour
 
     public void DisplayIcon()
     {
-        //null check 
-        if(Weapon != null)
-        {
-            itemName.text = Weapon.Name;
-
-            if (Weapon.Cooldown == Weapon.CooldownTimer)
-            {
-                cooldown.text = "Ready";
-            }
-            else
-            {
-                cooldown.text = Weapon.CooldownTimer.ToString("F0");
-            }
-            
-        }
-
         if(Ability != null)
         {
             itemName.text = Ability.Name;

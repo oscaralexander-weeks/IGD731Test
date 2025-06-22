@@ -28,6 +28,7 @@ public class ProjectBaseClass : MonoBehaviour
         {
             enemy.TakeDamage(damage);
             OnStyleIncrease?.Invoke();
+            Destroy(gameObject);
         }
 
     }

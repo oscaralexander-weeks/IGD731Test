@@ -3883,8 +3883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0c8437c0abde940bf0f4049be01500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ability: {fileID: 0}
-  Weapon: {fileID: 1440707834}
+  Ability: {fileID: 1440707834}
   cooldown: {fileID: 185857142}
   itemName: {fileID: 1209168020}
 --- !u!114 &1115390677
@@ -5174,7 +5173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ability: {fileID: 1226528862}
-  Weapon: {fileID: 0}
   cooldown: {fileID: 1705917868}
   itemName: {fileID: 1453307510}
 --- !u!114 &1670731397
@@ -5767,8 +5765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0c8437c0abde940bf0f4049be01500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ability: {fileID: 0}
-  Weapon: {fileID: 1253977671}
+  Ability: {fileID: 1253977671}
   cooldown: {fileID: 628575929}
   itemName: {fileID: 1909531283}
 --- !u!1 &1767135883
@@ -7097,7 +7094,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ability: {fileID: 987239352}
-  Weapon: {fileID: 0}
   cooldown: {fileID: 932072814}
   itemName: {fileID: 1706640596}
 --- !u!114 &2041569866
