@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [Header("Systems")]
     public EnemyRuntimeSet runtimeSet;
     public UnityEvent onUnitDeath;
+    public UnityEvent onUnitHit;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem instanceDamageParticles;
 
@@ -29,6 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
+        onUnitHit?.Invoke();
         unitHealth -= damage;
         SpawnDamageParticles(gameObject.transform);
         if(unitHealth <= 0)
