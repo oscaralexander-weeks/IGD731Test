@@ -7,10 +7,10 @@ public class ProjectBaseClass : MonoBehaviour
 {
     public UnityEvent OnProjectileHit;
     public int damage;
-    //public float DestroyTime;
+    public float DestroyTime;
 
 
-    //private Coroutine _returnToPoolTimerCoroutine;
+    private Coroutine _returnToPoolTimerCoroutine;
 
     [Header("Style Events")]
     public UnityEvent OnStyleIncrease;
@@ -18,7 +18,7 @@ public class ProjectBaseClass : MonoBehaviour
 
     private void OnEnable()
     {
-        //_returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
+        _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
         Physics.IgnoreLayerCollision(0, 7);
     }
 
@@ -35,16 +35,16 @@ public class ProjectBaseClass : MonoBehaviour
 
     }
 
-    //private IEnumerator ReturnToPoolAfterTime()
-    //{
-    //    float elapsedTime = 0f;
-    //    while(elapsedTime < DestroyTime)
-    //    {
-    //        elapsedTime += Time.deltaTime;
-    //        yield return null;
-    //    }
+    private IEnumerator ReturnToPoolAfterTime()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < DestroyTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
 
-    //    ObjectPoolManager.ReturnObjectToPool(gameObject);
-    //}
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
+    }
 
 }

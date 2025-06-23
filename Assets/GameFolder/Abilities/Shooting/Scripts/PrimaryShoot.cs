@@ -30,12 +30,12 @@ public class PrimaryShoot : BaseDefaultWeapon
         {
             OnFire?.Invoke();
 
-            var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
+            //var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
 
-            //GameObject bullet = ObjectPoolManager.SpawnObject(ShotPrefab, Firepoint.position, Firepoint.rotation);
+            GameObject bullet = ObjectPoolManager.SpawnObject(ShotPrefab, Firepoint.position, Firepoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * ShotSpeed;
 
-            Destroy(bullet, ShotDecay);
+            //Destroy(bullet, ShotDecay);
 
             IsOnCooldown = true;
         }

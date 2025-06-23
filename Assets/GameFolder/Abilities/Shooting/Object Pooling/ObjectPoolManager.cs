@@ -33,7 +33,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         GameObject gameObject = pool.InactiveObjects.FirstOrDefault();
         
-        if(gameObject != null)
+        if(gameObject == null)
         {
             //if there are no inactive objects it must be instantiated 
             gameObject = Instantiate(prefab, spawnPosition, spawnRotation);

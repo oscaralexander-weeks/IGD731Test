@@ -62,13 +62,13 @@ public class SecondaryShoot : BaseDefaultWeapon
 
         while (i > 0)
         {
-            var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
+            //var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
 
-            //var bullet = ObjectPoolManager.SpawnObject(ShotPrefab, Firepoint.position, Firepoint.rotation);
+            var bullet = ObjectPoolManager.SpawnObject(ShotPrefab, Firepoint.position, Firepoint.rotation);
             
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * ShotSpeed;
 
-            Destroy(bullet, ShotDecay);
+            //Destroy(bullet, ShotDecay);
 
             i--;
             yield return new WaitForSeconds(0.25f);
