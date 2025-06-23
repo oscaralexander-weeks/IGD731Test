@@ -2,12 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 public class ObjectPoolManager : MonoBehaviour
 {
     public static List<PooledObjectInfo> ObjectPools = new List<PooledObjectInfo>();
 
-    public static GameObject SpawnObject(GameObject prefab, Vector3 spawnPosition, Quaternion spawnRotation)
+    private GameObject _objectPoolEmptiesHolder;
+
+    private static GameObject _gameObjectsEmpty;
+
+    public enum PoolType
+    {
+        GameObject,
+        None
+    }
+
+    private void Awake()
+    {
+        SetUpEmpties();
+    }
+
+    private void SetUpEmpties()
+    {
+        _objectPoolEmptiesHolder = new GameObject("Pooled Objects");
+
+        _gameObjectsEmpty = new GameObject("Game Objects");
+        _gameObjectsEmpty.transform.SetParent(_objectPoolEmptiesHolder.transform);
+    }
+
+    public static GameObject SpawnObject(GameObject prefab, Vector3 spawnPosition, Quaternion spawnRotation, PoolType poolType = PoolType.None)
     {
 
         //search through the pool to see if passed GameObject already exists 
@@ -35,8 +59,16 @@ public class ObjectPoolManager : MonoBehaviour
         
         if(gameObject == null)
         {
+            //parent instantiated objects to parent created on Awake
+            GameObject parentObject = SetParentObject(poolType); 
+
             //if there are no inactive objects it must be instantiated 
             gameObject = Instantiate(prefab, spawnPosition, spawnRotation);
+
+            if(parentObject != null)
+            {
+                gameObject.transform.SetParent(parentObject.transform);
+            }
         }
         else
         {
@@ -67,7 +99,24 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
+    private static GameObject SetParentObject(PoolType poolType)
+    {
+        switch (poolType)
+        {
+            case PoolType.GameObject:
+                return _gameObjectsEmpty;
+
+            case PoolType.None:
+                return null;
+
+            default:
+                return null;
+        }
+    }
+
 }
+
+
 
 public class PooledObjectInfo
 {
