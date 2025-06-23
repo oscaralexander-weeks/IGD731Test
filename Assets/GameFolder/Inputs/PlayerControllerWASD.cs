@@ -12,7 +12,6 @@ public class PlayerControllerWASD : MonoBehaviour
     private Vector3 _rotationTarget;
     public bool canMove;
 
-  
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
