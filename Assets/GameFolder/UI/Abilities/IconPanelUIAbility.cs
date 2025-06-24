@@ -37,4 +37,10 @@ public class IconPanelUIAbility : MonoBehaviour
             }
         }
     }
+
+    public void SwitchAbility(AbilitiesSuperclass ability)
+    {
+        Ability = ability;
+        DisplayIcon();
+    }
 }

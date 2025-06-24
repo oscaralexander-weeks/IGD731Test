@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapons:
-  - {fileID: 1440707834}
+  - {fileID: 571441990}
 --- !u!65 &410933901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2160,6 +2160,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562919703}
   m_CullTransparentMesh: 1
+--- !u!1 &571441989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571441991}
+  - component: {fileID: 571441990}
+  m_Layer: 0
+  m_Name: Tertiary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &571441990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571441989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b130db5737247ee43b0124268c3a34e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Tertiary
+  Cooldown: 3
+  CooldownTimer: 0
+  IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
+  Firepoint: {fileID: 365798285}
+  ShotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
+    type: 3}
+  Ammo: 0
+  ShotSpeed: 30
+  ShotDecay: 0.75
+  IsShooting: 0
+  AdditionalFirepoints:
+  - {fileID: 1126560605}
+  - {fileID: 1755836776}
+--- !u!4 &571441991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571441989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2062146689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580007621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,6 +4350,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115390674}
   m_CullTransparentMesh: 1
+--- !u!1 &1126560604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126560605}
+  m_Layer: 6
+  m_Name: Firepoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1126560605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126560604}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.13052596, z: -0, w: 0.99144495}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1794553155}
+  m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
 --- !u!1 &1156549040
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,6 +6281,37 @@ MonoBehaviour:
   Ability: {fileID: 1253977671}
   cooldown: {fileID: 628575929}
   itemName: {fileID: 1909531283}
+--- !u!1 &1755836775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755836776}
+  m_Layer: 6
+  m_Name: Firepoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755836776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755836775}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1794553155}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767135883
 GameObject:
   m_ObjectHideFlags: 0
@@ -6634,6 +6757,8 @@ Transform:
   m_Children:
   - {fileID: 1039311536}
   - {fileID: 365798285}
+  - {fileID: 1126560605}
+  - {fileID: 1755836776}
   - {fileID: 552192355}
   - {fileID: 2062146689}
   m_Father: {fileID: 0}
@@ -6922,6 +7047,21 @@ MonoBehaviour:
   - {fileID: 1440707834}
   IsInRangeToSwitchWeapon: 0
   WeaponsRack: {fileID: 0}
+  onWeaponSwitch:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a61235fb8d2587a47b9db294cda7653c, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1794553168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6985,6 +7125,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemRuntimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
+--- !u!1 &1814700820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814700821}
+  - component: {fileID: 1814700822}
+  m_Layer: 0
+  m_Name: OnWeaponSwitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814700821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814700820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1851369761}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814700822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814700820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86278864c79498a4994ed7a228dd27cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a61235fb8d2587a47b9db294cda7653c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1754416428}
+        m_TargetAssemblyTypeName: IconPanelUIAbility, Assembly-CSharp
+        m_MethodName: SwitchAbility
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 571441990}
+          m_ObjectArgumentAssemblyTypeName: AbilitiesSuperclass, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1851369760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,6 +7215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1084459217}
+  - {fileID: 1814700821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883361867
@@ -7716,6 +7917,7 @@ Transform:
   - {fileID: 987239351}
   - {fileID: 5236449}
   - {fileID: 1226528861}
+  - {fileID: 571441991}
   m_Father: {fileID: 1794553155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

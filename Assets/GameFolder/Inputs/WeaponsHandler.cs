@@ -12,6 +12,7 @@ public class WeaponsHandler : MonoBehaviour
     //public UnityEvent onWeaponSwitch;
     public bool IsInRangeToSwitchWeapon;
     public WeaponsRack WeaponsRack = null;
+    public UnityEvent onWeaponSwitch;
 
     public void OnShoot(InputAction.CallbackContext context)
     {
@@ -37,6 +38,7 @@ public class WeaponsHandler : MonoBehaviour
             if (IsInRangeToSwitchWeapon && WeaponsRack != null)
             {
                 WeaponsRack.SwitchWeapon(Weapons);
+                onWeaponSwitch?.Invoke();
             }
         }
     }
@@ -70,6 +72,7 @@ public class WeaponsHandler : MonoBehaviour
         if (Weapons != null)
         {
             IsInRangeToSwitchWeapon = false;
+            WeaponsRack = null;
         }
     }
 }
