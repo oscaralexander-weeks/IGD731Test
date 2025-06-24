@@ -2342,8 +2342,8 @@ MonoBehaviour:
   ShotSpeed: 30
   ShotDecay: 0
   IsShooting: 0
-  pelletCount: 7
-  spreadAngle: 30
+  pelletCount: 5
+  spreadAngle: 15
   shotSpeed: 20
 --- !u!4 &571441991
 Transform:
