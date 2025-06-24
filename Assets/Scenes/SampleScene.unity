@@ -2340,11 +2340,11 @@ MonoBehaviour:
     type: 3}
   Ammo: 0
   ShotSpeed: 30
-  ShotDecay: 0.75
+  ShotDecay: 0
   IsShooting: 0
-  AdditionalFirepoints:
-  - {fileID: 1126560605}
-  - {fileID: 1755836776}
+  pelletCount: 7
+  spreadAngle: 30
+  shotSpeed: 20
 --- !u!4 &571441991
 Transform:
   m_ObjectHideFlags: 0
@@ -5022,7 +5022,7 @@ MonoBehaviour:
     type: 3}
   Ammo: 0
   ShotSpeed: 35
-  ShotDecay: 1
+  ShotDecay: 0
   IsShooting: 0
 --- !u!1 &1431107335
 GameObject:
@@ -5143,7 +5143,7 @@ MonoBehaviour:
     type: 3}
   Ammo: 0
   ShotSpeed: 30
-  ShotDecay: 0.3
+  ShotDecay: 0
   IsShooting: 0
 --- !u!1 &1453307508
 GameObject:

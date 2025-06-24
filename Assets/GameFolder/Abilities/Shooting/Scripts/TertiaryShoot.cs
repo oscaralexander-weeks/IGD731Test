@@ -6,7 +6,13 @@ using UnityEngine.UIElements;
 
 public class TertiaryShoot : BaseDefaultWeapon
 {
-    public List<Transform> AdditionalFirepoints = new List<Transform>();
+    [Header("Spread Settings")]
+    [Tooltip("Number of pellets per shot")]
+    public int pelletCount = 7;
+    [Tooltip("Angle in degrees of the total spread cone")]
+    public float spreadAngle = 30f;
+
+    public float shotSpeed = 20f;
 
     private void Start()
     {
@@ -29,29 +35,38 @@ public class TertiaryShoot : BaseDefaultWeapon
     }
     public override void Shoot()
     {
-        if (!IsOnCooldown && AbilityCount > 0)
+        if (IsOnCooldown || AbilityCount <= 0)
         {
-            OnFire?.Invoke();
-
-            //var bullet = Instantiate(ShotPrefab, Firepoint.position, Firepoint.rotation);
-
-            
-            GameObject bullet = ObjectPoolManager.SpawnObject(ShotPrefab, Firepoint.position, Firepoint.rotation, ObjectPoolManager.PoolType.GameObject);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * ShotSpeed;
-            GameObject bullet2 = ObjectPoolManager.SpawnObject(ShotPrefab, AdditionalFirepoints[0].position, AdditionalFirepoints[0].rotation, ObjectPoolManager.PoolType.GameObject);
-            bullet2.GetComponent<Rigidbody>().velocity = bullet2.transform.forward * ShotSpeed;
-            GameObject bullet3 = ObjectPoolManager.SpawnObject(ShotPrefab, AdditionalFirepoints[1].position, AdditionalFirepoints[1].rotation, ObjectPoolManager.PoolType.GameObject);
-            bullet3.GetComponent<Rigidbody>().velocity = bullet3.transform.forward * ShotSpeed;
-
-            //Destroy(bullet, ShotDecay);
-
-            IsOnCooldown = true;
-            AbilityCount--;
+            if (AbilityCount <= 0) Debug.LogWarning("No ammo left!");
+            return;
         }
 
-        if(AbilityCount == 0 || !HasAbilityCount)
+        OnFire?.Invoke();
+
+        // Starting offset so that pellets fan evenly around the forward vector
+        float halfSpread = spreadAngle * 0.5f;
+        for (int i = 0; i < pelletCount; i++)
         {
-            Debug.LogWarning("Ability Count < 0 or false");
+            // Evenly distribute angle between [-halfSpread .. +halfSpread]
+            float t = (pelletCount == 1) ? 0f : (float)i / (pelletCount - 1);
+            float currentAngle = Mathf.Lerp(-halfSpread, halfSpread, t);
+
+            // Rotate the firePoint’s forward vector by currentAngle around up (Y)
+            Quaternion pelletRotation = Firepoint.rotation * Quaternion.Euler(0f, currentAngle, 0f);
+
+            // Spawn & launch
+            GameObject pellet = ObjectPoolManager.SpawnObject(
+                ShotPrefab,
+                Firepoint.position,
+                pelletRotation,
+                ObjectPoolManager.PoolType.GameObject
+            );
+            Rigidbody rb = pellet.GetComponent<Rigidbody>();
+            rb.velocity = pelletRotation * Vector3.forward * shotSpeed;
         }
+
+        IsOnCooldown = true;
+        CooldownTimer = Cooldown;
+        AbilityCount--;
     }
 }
