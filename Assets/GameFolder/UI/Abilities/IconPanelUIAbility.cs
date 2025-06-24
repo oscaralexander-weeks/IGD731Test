@@ -10,6 +10,7 @@ public class IconPanelUIAbility : MonoBehaviour
 
     public TextMeshProUGUI cooldown;
     public TextMeshProUGUI itemName;
+    public TextMeshProUGUI count;
 
     private void Start()
     {
@@ -26,6 +27,11 @@ public class IconPanelUIAbility : MonoBehaviour
         if(Ability != null)
         {
             itemName.text = Ability.Name;
+
+            if (Ability.HasAbilityCount)
+            {
+                count.text = Ability.AbilityCount.ToString();
+            }
 
             if(Ability.Cooldown == Ability.CooldownTimer)
             {

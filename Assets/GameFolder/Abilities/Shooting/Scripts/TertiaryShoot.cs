@@ -29,7 +29,7 @@ public class TertiaryShoot : BaseDefaultWeapon
     }
     public override void Shoot()
     {
-        if (!IsOnCooldown)
+        if (!IsOnCooldown && AbilityCount > 0)
         {
             OnFire?.Invoke();
 
@@ -46,6 +46,12 @@ public class TertiaryShoot : BaseDefaultWeapon
             //Destroy(bullet, ShotDecay);
 
             IsOnCooldown = true;
+            AbilityCount--;
+        }
+
+        if(AbilityCount == 0 || !HasAbilityCount)
+        {
+            Debug.LogWarning("Ability Count < 0 or false");
         }
     }
 }

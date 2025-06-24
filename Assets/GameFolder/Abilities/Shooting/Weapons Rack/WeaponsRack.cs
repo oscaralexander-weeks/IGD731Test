@@ -9,6 +9,7 @@ public class WeaponsRack : MonoBehaviour
     public void SwitchWeapon(List<BaseDefaultWeapon> playerWeapons)
     {
         playerWeapons[0] = Weapons[0];
+        playerWeapons[0].AbilityCount = playerWeapons[0].AbilityCountMax;
     }
 
 }

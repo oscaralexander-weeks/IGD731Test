@@ -10,4 +10,8 @@ public class AbilitiesSuperclass : MonoBehaviour
     public float CooldownTimer;
     public bool IsOnCooldown;
     public UnityEvent OnFire;
+
+    public int AbilityCountMax;
+    public int AbilityCount;
+    public bool HasAbilityCount;
 }

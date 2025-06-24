@@ -26,7 +26,7 @@ public class PrimaryShoot : BaseDefaultWeapon
     }
     public override void Shoot()
     {
-        if (!IsOnCooldown)
+        if (!IsOnCooldown && AbilityCount > 0)
         {
             OnFire?.Invoke();
 
@@ -38,6 +38,7 @@ public class PrimaryShoot : BaseDefaultWeapon
             //Destroy(bullet, ShotDecay);
 
             IsOnCooldown = true;
+            AbilityCount--;
         }
     }
 }
