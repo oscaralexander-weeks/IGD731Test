@@ -1813,9 +1813,9 @@ MonoBehaviour:
   Weapons:
   - {fileID: 571441990}
   weaponUI: {fileID: 1754416428}
-  OnWeaponSwitch:
-    m_PersistentCalls:
-      m_Calls: []
+  IsOnCooldown: 0
+  CooldownTimer: 25
+  Cooldown: 25
 --- !u!65 &410933901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2629,9 +2629,9 @@ MonoBehaviour:
   Weapons:
   - {fileID: 1253977671}
   weaponUI: {fileID: 1754416428}
-  OnWeaponSwitch:
-    m_PersistentCalls:
-      m_Calls: []
+  IsOnCooldown: 0
+  CooldownTimer: 25
+  Cooldown: 25
 --- !u!65 &615772039
 BoxCollider:
   m_ObjectHideFlags: 0
