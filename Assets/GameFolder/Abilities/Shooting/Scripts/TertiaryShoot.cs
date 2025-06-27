@@ -6,13 +6,7 @@ using UnityEngine.UIElements;
 
 public class TertiaryShoot : BaseDefaultWeapon
 {
-    [Header("Spread Settings")]
-    [Tooltip("Number of pellets per shot")]
     public int pelletCount = 7;
-    [Tooltip("Angle in degrees of the total spread cone")]
-    public float spreadAngle = 30f;
-
-    public float shotSpeed = 20f;
 
     private void Start()
     {
@@ -43,26 +37,16 @@ public class TertiaryShoot : BaseDefaultWeapon
 
         OnFire?.Invoke();
 
-        // Starting offset so that pellets fan evenly around the forward vector
-        float halfSpread = spreadAngle * 0.5f;
         for (int i = 0; i < pelletCount; i++)
         {
-            // Evenly distribute angle between [-halfSpread .. +halfSpread]
-            float t = (pelletCount == 1) ? 0f : (float)i / (pelletCount - 1);
-            float currentAngle = Mathf.Lerp(-halfSpread, halfSpread, t);
 
-            // Rotate the firePoint’s forward vector by currentAngle around up (Y)
+            float currentAngle = Random.Range(15, 30);
+
             Quaternion pelletRotation = Firepoint.rotation * Quaternion.Euler(0f, currentAngle, 0f);
 
-            // Spawn & launch
-            GameObject pellet = ObjectPoolManager.SpawnObject(
-                ShotPrefab,
-                Firepoint.position,
-                pelletRotation,
-                ObjectPoolManager.PoolType.GameObject
-            );
-            Rigidbody rb = pellet.GetComponent<Rigidbody>();
-            rb.velocity = pelletRotation * Vector3.forward * shotSpeed;
+            GameObject pellet = Instantiate(ShotPrefab, Firepoint.position, pelletRotation);
+            pellet.GetComponent<Rigidbody>().velocity = pellet.transform.forward * ShotSpeed;
+            Destroy(pellet, 1);
         }
 
         IsOnCooldown = true;
