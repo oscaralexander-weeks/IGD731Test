@@ -18,7 +18,7 @@ public class AbilityAOESpellBox : AbilityBaseClass
 
     private Collider[] colliders = new Collider[10];
 
-    public float castRadius;
+    public Vector3 hitBox = Vector3.one;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class AbilityAOESpellBox : AbilityBaseClass
         //Collider[] colliders = Physics.OverlapSphere(abiltySpawnPoint.position, castRadius, layerAsLayerMask);
         //int hits = 0
         ClearArray();
-        int hitCount = Physics.OverlapBoxNonAlloc(abiltySpawnPoint.position, Vector3.one, colliders, abiltySpawnPoint.rotation, layerAsLayerMask);
+        int hitCount = Physics.OverlapBoxNonAlloc(abiltySpawnPoint.position, hitBox, colliders, abiltySpawnPoint.rotation, layerAsLayerMask);
 
         for (int i = 0; i < hitCount; i++)
         {
