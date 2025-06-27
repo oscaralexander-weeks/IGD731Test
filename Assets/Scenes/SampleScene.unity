@@ -6300,6 +6300,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706640594}
   m_CullTransparentMesh: 1
+--- !u!1 &1733192710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733192711}
+  - component: {fileID: 1733192712}
+  m_Layer: 0
+  m_Name: Ultimate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1733192711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733192710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2062146689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733192712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733192710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1da2edcf30d104fa973fe145447867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ultimate
+  Cooldown: 5
+  CooldownTimer: 5
+  IsOnCooldown: 0
+  OnFire:
+    m_PersistentCalls:
+      m_Calls: []
+  AbilityCountMax: 0
+  AbilityCount: 0
+  HasAbilityCount: 0
+  AbilityPrefab: {fileID: 0}
+  onStyleIncrease:
+    m_PersistentCalls:
+      m_Calls: []
+  onStyleDecrease:
+    m_PersistentCalls:
+      m_Calls: []
+  AOESpellDamage: 200
+  layer: 8
+  castRadius: 0
 --- !u!1 &1746945951
 GameObject:
   m_ObjectHideFlags: 0
@@ -7368,7 +7432,7 @@ MonoBehaviour:
   abilities:
   - {fileID: 1226528862}
   - {fileID: 987239352}
-  - {fileID: 5236450}
+  - {fileID: 1733192712}
   testTransform: {fileID: 552192355}
   onStyleIncrease:
     m_PersistentCalls:
@@ -7403,6 +7467,8 @@ MonoBehaviour:
   maxAbilityDistance: 7
   sphereColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   castRadius: 2
+  cubeColor: {r: 1, g: 0, b: 0, a: 1}
+  halfExtents: {x: 1, y: 1, z: 1}
 --- !u!114 &1794553169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8210,6 +8276,7 @@ Transform:
   - {fileID: 5236449}
   - {fileID: 1226528861}
   - {fileID: 571441991}
+  - {fileID: 1733192711}
   m_Father: {fileID: 1794553155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807

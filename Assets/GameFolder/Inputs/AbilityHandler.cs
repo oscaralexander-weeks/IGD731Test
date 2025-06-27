@@ -28,6 +28,9 @@ public class AbilityHandler : MonoBehaviour
     public Color sphereColor = Color.yellow;
     public float castRadius;
 
+    public Color cubeColor = Color.red;
+    public Vector3 halfExtents = Vector3.one;
+
     private void Update()
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -106,6 +109,9 @@ public class AbilityHandler : MonoBehaviour
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawSphere(testTransform.position, castRadius);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(testTransform.position, halfExtents);
         }
     }
 
