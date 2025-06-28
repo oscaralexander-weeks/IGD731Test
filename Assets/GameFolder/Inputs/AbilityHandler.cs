@@ -11,7 +11,7 @@ public class AbilityHandler : MonoBehaviour
     [Header("Abilities")]
     [SerializeField] private List<AbilityBaseClass> abilities = new List<AbilityBaseClass>();
 
-    [SerializeField] private Transform testTransform;
+    [SerializeField] private Transform testTransform, fixedTransform;
 
     //Currently not in use 
     [Header("Events")]
@@ -64,11 +64,11 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            UseAbility(0);
+            UseAbilityRadius(0);
         }
     }
 
-    private void UseAbility(int index)
+    private void UseAbilityRadius(int index)
     {
         if(abilities.Count > 0 && abilities[index] != null)
         {
@@ -86,12 +86,30 @@ public class AbilityHandler : MonoBehaviour
         }
 
     }
+    private void UseAbilityFixedPosition(int index)
+    {
+        if (abilities.Count > 0 && abilities[index] != null)
+        {
+            if (!abilities[index].IsOnCooldown)
+            {
+                abilities[index].Ability(gameObject.transform);
+                abilities[index].IsOnCooldown = true;
+                //StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
+            }
+        }
+
+        if (abilities[index] == null)
+        {
+            Debug.Log("this");
+        }
+
+    }
 
     public void OnAbility2(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            UseAbility(1);
+            UseAbilityRadius(1);
         }
     }
 
@@ -99,7 +117,7 @@ public class AbilityHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            UseAbility(2);
+            UseAbilityFixedPosition(2);
         }
     }
 
@@ -111,7 +129,7 @@ public class AbilityHandler : MonoBehaviour
             Gizmos.DrawSphere(testTransform.position, castRadius);
 
             Gizmos.color = Color.red;
-            Gizmos.DrawCube(testTransform.position, halfExtents);
+            Gizmos.DrawCube(gameObject.transform.position, halfExtents);
         }
     }
 
