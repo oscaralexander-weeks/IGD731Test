@@ -8,6 +8,7 @@ public class BaseDefaultWeapon : AbilitiesSuperclass
     [Header("References")]
     public Transform Firepoint;
     public GameObject ShotPrefab;
+    public GameObject WeaponPrefab;
 
     [Header("Counts")]
     public int Ammo;

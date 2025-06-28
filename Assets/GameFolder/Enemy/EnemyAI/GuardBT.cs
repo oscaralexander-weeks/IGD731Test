@@ -11,14 +11,15 @@ public class GuardBT : BTree
     public static float fovRange = 6f;
     public static float attackRange = 3f;
 
-
     //additions I've made specific to this game 
     public FloatVariable HP;
     private Enemy _enemy;
+    private PlayerControllerWASD _player;
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
+        _player = GameObject.FindObjectOfType<PlayerControllerWASD>();
     }
 
     protected override Node SetUpTree()
@@ -50,17 +51,19 @@ public class GuardBT : BTree
 
         });
         */
+
         Node root = new Selector(new List<Node>
         {
             new BehaviourTree.Sequence(new List<Node>
         {
-            new CheckStatusEffects(_enemy),
+            new CheckPlayerStats(_player),
             new CheckEnemyInAttackRange(transform),
             new AttackNode(HP)
         }),
 
             new BehaviourTree.Sequence(new List<Node>
             {
+                new CheckPlayerStats(_player),
                 new CheckEnemyInFOVRange(transform),
                 new TaskGoToTarget(transform),
                 //new AttackNode(HP)
@@ -68,7 +71,6 @@ public class GuardBT : BTree
             new TaskPatrol(transform, waypoints)
 
         });
-
 
         return root;
     }

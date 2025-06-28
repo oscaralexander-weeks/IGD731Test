@@ -14,6 +14,11 @@ public class WeaponsHandler : MonoBehaviour
     public WeaponsRack WeaponsRack = null;
     public UnityEvent onWeaponSwitch;
 
+    [Header("Particles")]
+    [SerializeField] private Transform particleSpawn;
+    [SerializeField] private ParticleSystem muzzleFlash;
+    private ParticleSystem instancedMuzzleFlash;
+
     public void OnShoot(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -48,6 +53,7 @@ public class WeaponsHandler : MonoBehaviour
         if(Weapons.Count > 0 && index <= Weapons.Count)
         {
             Weapons[index].Shoot();
+            SpawnParticles(particleSpawn);
         }
         else
         {
@@ -73,6 +79,14 @@ public class WeaponsHandler : MonoBehaviour
         {
             IsInRangeToSwitchWeapon = false;
             WeaponsRack = null;
+        }
+    }
+
+    private void SpawnParticles(Transform particleSpawn)
+    {
+        if (muzzleFlash != null)
+        {
+            instancedMuzzleFlash = Instantiate(muzzleFlash, particleSpawn);
         }
     }
 }

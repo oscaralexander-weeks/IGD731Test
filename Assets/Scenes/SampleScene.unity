@@ -1654,10 +1654,11 @@ Transform:
   m_GameObject: {fileID: 365798284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0.5, y: 0.25, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 983847855}
   m_Father: {fileID: 1794553155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
@@ -2342,6 +2343,7 @@ MonoBehaviour:
   Firepoint: {fileID: 365798285}
   ShotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
     type: 3}
+  WeaponPrefab: {fileID: 0}
   Ammo: 0
   ShotSpeed: 30
   ShotDecay: 0
@@ -3188,6 +3190,74 @@ Transform:
   - {fileID: 487578839}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &810376415
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 365798285}
+    m_Modifications:
+    - target: {fileID: 4862087008187806244, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_Name
+      value: LeverAction1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.021949291
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.635025
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0dafb588ec9cf23478fa2244da4e408d, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4038,6 +4108,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932072812}
   m_CullTransparentMesh: 1
+--- !u!4 &983847855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5202302927181654174, guid: 0dafb588ec9cf23478fa2244da4e408d,
+    type: 3}
+  m_PrefabInstance: {fileID: 810376415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987239350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4514,6 +4590,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1084459218}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -5115,6 +5203,7 @@ MonoBehaviour:
   Firepoint: {fileID: 365798285}
   ShotPrefab: {fileID: 3036956074317436997, guid: f72a86afb595a0249a526d93016f110a,
     type: 3}
+  WeaponPrefab: {fileID: 0}
   Ammo: 0
   ShotSpeed: 35
   ShotDecay: 0
@@ -5236,6 +5325,7 @@ MonoBehaviour:
   Firepoint: {fileID: 365798285}
   ShotPrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
     type: 3}
+  WeaponPrefab: {fileID: 0}
   Ammo: 0
   ShotSpeed: 30
   ShotDecay: 0
@@ -7395,7 +7485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   SpeedMultiplyer: 1
-  canMove: 1
+  IsStealth: 0
 --- !u!54 &1794553164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7455,6 +7545,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  particleSpawn: {fileID: 365798285}
+  muzzleFlash: {fileID: 0}
 --- !u!114 &1794553168
 MonoBehaviour:
   m_ObjectHideFlags: 0

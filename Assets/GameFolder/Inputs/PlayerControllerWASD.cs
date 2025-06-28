@@ -10,8 +10,9 @@ public class PlayerControllerWASD : MonoBehaviour
     public float SpeedMultiplyer = 1;
     private Vector2 _move, _mouseLook;
     private Vector3 _rotationTarget;
-    public bool canMove;
+    private bool _canMove = true;
 
+    public bool IsStealth;
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -21,8 +22,6 @@ public class PlayerControllerWASD : MonoBehaviour
     {
         _mouseLook = context.ReadValue<Vector2>();
     }
-
-    // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
@@ -39,19 +38,6 @@ public class PlayerControllerWASD : MonoBehaviour
         MovePlayerWithAim();
 
         //MovePlayer();
-
-    }
-
-    public void MovePlayer()
-    {
-        Vector3 movement = new Vector3(_move.x, 0f, _move.y);
-
-        if(movement != Vector3.zero)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-        }
-
-        transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
     }
 
     public void MovePlayerWithAim()
@@ -67,13 +53,23 @@ public class PlayerControllerWASD : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
         }
 
-        if (canMove)
+        if (_canMove)
         {
             Vector3 movement = new Vector3(_move.x, 0f, _move.y);
 
             transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
         }
-
-
     }
+
+    //public void MovePlayer()
+    //{
+    //    Vector3 movement = new Vector3(_move.x, 0f, _move.y);
+
+    //    if(movement != Vector3.zero)
+    //    {
+    //        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+    //    }
+
+    //    transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
+    //}
 }
