@@ -6393,6 +6393,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   AOESpellDamage: 200
+  damageParticles: {fileID: 3802302459956397562, guid: b3416c8b2e3c7804b8c061dc4a36fc43,
+    type: 3}
   layer: 8
   hitBox: {x: 1, y: 1, z: 20}
 --- !u!1 &1746945951
@@ -7500,8 +7502,6 @@ MonoBehaviour:
   maxAbilityDistance: 7
   sphereColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   castRadius: 2
-  cubeColor: {r: 1, g: 0, b: 0, a: 1}
-  halfExtents: {x: 1, y: 1, z: 20}
 --- !u!114 &1794553169
 MonoBehaviour:
   m_ObjectHideFlags: 0

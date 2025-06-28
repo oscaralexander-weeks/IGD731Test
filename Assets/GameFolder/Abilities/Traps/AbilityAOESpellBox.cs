@@ -11,9 +11,9 @@ public class AbilityAOESpellBox : AbilityBaseClass
 
     [Header("AOESpell")]
     public int AOESpellDamage;
-    //[SerializeField] private ParticleSystem damageParticles;
+    [SerializeField] private ParticleSystem damageParticles;
     [SerializeField] private int layer = 8;
-    //private ParticleSystem instanceDamageParticles;
+    private ParticleSystem instanceDamageParticles;
     private int layerAsLayerMask;
 
     private Collider[] colliders = new Collider[10];
@@ -71,21 +71,21 @@ public class AbilityAOESpellBox : AbilityBaseClass
     {
         yield return new WaitForSeconds(0.25f);
         //start particles
-        //SpawnDamageParticles(abiltySpawnPoint);
+        SpawnDamageParticles(abiltySpawnPoint);
         CheckAOE(abiltySpawnPoint);
         yield return new WaitForSeconds(1f);
         //end particles
 
     }
-    /*
+    
     private void SpawnDamageParticles(Transform abiltySpawnPoint)
     {
         if (damageParticles != null)
         {
-            instanceDamageParticles = Instantiate(damageParticles, abiltySpawnPoint);
+            instanceDamageParticles = Instantiate(damageParticles, abiltySpawnPoint.position, abiltySpawnPoint.rotation);
         }
     }
-    */
+    
     public override void Ability(Transform abilitySpawnPoint)
     {
         StartCoroutine(AttackSequence(abilitySpawnPoint));
