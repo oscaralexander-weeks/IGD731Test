@@ -69,6 +69,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Ability4",
+                    "type": "Button",
+                    "id": "45911451-02eb-4e7f-b203-b408b7dc0399",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Item1",
                     "type": "Button",
                     "id": "df529cbf-08ab-4bd3-9f93-7a62676bf95a",
@@ -248,6 +257,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfe728e9-577d-4ffe-9ba0-1bc26d4f69a9",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ability4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

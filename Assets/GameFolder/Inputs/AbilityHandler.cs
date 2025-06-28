@@ -65,6 +65,29 @@ public class AbilityHandler : MonoBehaviour
         }
     }
 
+    public void OnAbility2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            UseAbilityRadius(1);
+        }
+    }
+
+    public void OnAbility3(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            UseAbilityFixedPosition(2);
+        }
+    }
+
+    public void OnAbility4(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            UseAbilityRadius(3);
+        }
+    }
     private void UseAbilityRadius(int index)
     {
         if(abilities.Count > 0 && abilities[index] != null)
@@ -100,22 +123,6 @@ public class AbilityHandler : MonoBehaviour
             Debug.Log("this");
         }
 
-    }
-
-    public void OnAbility2(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            UseAbilityRadius(1);
-        }
-    }
-
-    public void OnAbility3(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            UseAbilityFixedPosition(2);
-        }
     }
 
     private void OnDrawGizmos()

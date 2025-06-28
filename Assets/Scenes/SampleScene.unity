@@ -7360,6 +7360,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: db911c5d-d1fe-414f-84ad-86127a9a5361
     m_ActionName: Player/Interact[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45911451-02eb-4e7f-b203-b408b7dc0399
+    m_ActionName: Player/Ability4[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -7467,6 +7471,7 @@ MonoBehaviour:
   - {fileID: 1226528862}
   - {fileID: 987239352}
   - {fileID: 1733192712}
+  - {fileID: 5236450}
   testTransform: {fileID: 552192355}
   fixedTransform: {fileID: 1685409515}
   onStyleIncrease:
