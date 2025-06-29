@@ -5,10 +5,10 @@ using UnityEngine.Events;
 
 public class ProjectBaseClass : MonoBehaviour
 {
+    [Header("ProjectileInfo")]
     public UnityEvent OnProjectileHit;
     public int damage;
     public float DestroyTime;
-
 
     private Coroutine _returnToPoolTimerCoroutine;
 
