@@ -14,7 +14,10 @@ public class IconPanelUIAbility : MonoBehaviour
 
     private void Start()
     {
-        
+        if(Ability != null && !Ability.HasAbilityCount)
+        {
+            count.transform.parent.gameObject.SetActive(false);  
+        }
     }
 
     private void Update()
