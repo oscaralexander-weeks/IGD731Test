@@ -163,55 +163,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 5236448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e821066e6db9c904b89395b9b0537a72, type: 3}
+  m_Script: {fileID: 11500000, guid: b649f9ecf4ea6ea41810016e987711d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: SmokeBomb
+  Name: Smokebomb
   Cooldown: 5
   CooldownTimer: 5
   IsOnCooldown: 0
   OnFire:
     m_PersistentCalls:
       m_Calls: []
-  AbilityCountMax: 0
-  AbilityCount: 5
-  HasAbilityCount: 0
+  AbilityCountMax: 3
+  AbilityCount: 3
+  HasAbilityCount: 1
   AbilityPrefab: {fileID: 0}
   onStyleIncrease:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2e20fefa97f54b246863a0863c09ece9, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onStyleDecrease:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1e8453a07fed0374da42fa66fff861e2, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  AOESpellDamage: 50
-  damageParticles: {fileID: 4425129568604114668, guid: 514bb08c0cca65b4d95d5ebc53bb408a,
+      m_Calls: []
+  damageParticles: {fileID: 4425129568604114668, guid: bbeeb0ddc21369746aaaae5c5c1c09cf,
     type: 3}
-  layer: 8
-  castRadius: 4
+  layer: 6
+  castRadius: 3
 --- !u!1 &45217361
 GameObject:
   m_ObjectHideFlags: 0
@@ -8676,7 +8651,19 @@ MonoBehaviour:
     m_ActionId: db911c5d-d1fe-414f-84ad-86127a9a5361
     m_ActionName: Player/Interact[/Keyboard/c]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1794553168}
+        m_TargetAssemblyTypeName: AbilityHandler, Assembly-CSharp
+        m_MethodName: OnAbility4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 45911451-02eb-4e7f-b203-b408b7dc0399
     m_ActionName: Player/Ability4[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0

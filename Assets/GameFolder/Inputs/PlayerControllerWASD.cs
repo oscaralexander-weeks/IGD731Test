@@ -36,6 +36,7 @@ public class PlayerControllerWASD : MonoBehaviour
         }
 
         MovePlayerWithAim();
+        CheckStealth();
 
         //MovePlayer();
     }
@@ -59,6 +60,21 @@ public class PlayerControllerWASD : MonoBehaviour
 
             transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
         }
+    }
+
+    private void CheckStealth()
+    {
+        if (IsStealth)
+        {
+            StartCoroutine(ResetStealth());
+        }
+    }
+
+    private IEnumerator ResetStealth()
+    {
+        yield return new WaitForSeconds(4);
+
+        IsStealth = false;
     }
 
     //public void MovePlayer()
