@@ -12,11 +12,13 @@ public class PatrolBTVariant : BTree
 
     //additions I've made specific to this game 
     private Enemy _enemy;
+    private PlayerControllerWASD _player;
 
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
+        _player = GameObject.FindObjectOfType<PlayerControllerWASD>();
     }
 
     protected override Node SetUpTree()
@@ -25,11 +27,13 @@ public class PatrolBTVariant : BTree
         {
             new BehaviourTree.Sequence(new List<Node>
             {
+                new CheckPlayerStats(_player),
                 new CheckEnemyInAttackRange(transform),
                 new AttackNode(HP)
             }),
             new BehaviourTree.Sequence(new List<Node>
         {
+            new CheckPlayerStats(_player),
             new CheckPlayerInRangeRay(transform),
             new TaskGoToTarget(transform)
         }),
