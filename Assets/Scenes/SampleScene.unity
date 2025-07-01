@@ -591,6 +591,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1883361868}
   - {fileID: 458836315}
+  HP: {fileID: 11400000, guid: 80f8488dc51db3b4ca197da812fc1a07, type: 2}
 --- !u!1 &195118319
 GameObject:
   m_ObjectHideFlags: 0
