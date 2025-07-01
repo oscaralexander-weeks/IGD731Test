@@ -150,7 +150,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   damage: 25
-  DestroyTime: 2
+  DestroyTime: 4
   OnStyleIncrease:
     m_PersistentCalls:
       m_Calls:

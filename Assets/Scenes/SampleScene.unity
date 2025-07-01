@@ -1420,10 +1420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e0761dd27be0b41a2751f1c7a3f441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProjectilePrefab: {fileID: 3036956074317436997, guid: 9065c77fe872ceb4eb36b11c70a5441b,
+  ProjectilePrefab: {fileID: 3036956074317436997, guid: 7215e46951346df47a72e6d65a0ad890,
     type: 3}
   ProjectileSpawn: {fileID: 312194688}
-  ShotSpeed: 45
+  ShotSpeed: 25
 --- !u!1 &323705337
 GameObject:
   m_ObjectHideFlags: 0
