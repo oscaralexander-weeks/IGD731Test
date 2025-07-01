@@ -5,6 +5,9 @@ using BehaviourTree;
 
 public class CheckPlayerInRangeRay : Node 
 {
+    public static int _enemyLayer = 1 << 6;
+
+
     private Transform _transform;
     public CheckPlayerInRangeRay(Transform transform)
     {
@@ -21,7 +24,7 @@ public class CheckPlayerInRangeRay : Node
         if (t == null)
         {
             RaycastHit hit;
-            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50))
+            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50, _enemyLayer))
             {
                 Debug.Log("hit");
                 parent.parent.SetData("target", hit.transform);
