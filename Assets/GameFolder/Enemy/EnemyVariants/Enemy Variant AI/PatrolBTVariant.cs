@@ -8,6 +8,7 @@ public class PatrolBTVariant : BTree
     public Transform[] waypoints;
     public static float speed = 3f;
     public static float fovRange = 6f;
+    public static float attackRange = 3f;
     [SerializeField] private FloatVariable HP;
 
     //additions I've made specific to this game 
@@ -28,7 +29,7 @@ public class PatrolBTVariant : BTree
             new BehaviourTree.Sequence(new List<Node>
             {
                 new CheckPlayerStats(_player),
-                new CheckEnemyInAttackRange(transform),
+                new CheckEnemyInAttackRangeBasic(transform),
                 new AttackNode(HP)
             }),
             new BehaviourTree.Sequence(new List<Node>
