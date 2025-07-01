@@ -15,11 +15,13 @@ public class CheckPlayerInRangeRay : Node
     public override NodeState Evaluate()
     {
         object t = GetData("target");
+        Vector3 forward = _transform.TransformDirection(Vector3.forward) * 50;
+        Debug.DrawRay(_transform.position, forward);
         
-        if(t == null)
+        if (t == null)
         {
             RaycastHit hit;
-            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50f))
+            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50))
             {
                 Debug.Log("hit");
                 parent.parent.SetData("target", hit.transform);
