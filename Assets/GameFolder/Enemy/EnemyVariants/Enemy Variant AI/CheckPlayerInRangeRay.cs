@@ -26,10 +26,14 @@ public class CheckPlayerInRangeRay : Node
             RaycastHit hit;
             if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50, _enemyLayer))
             {
-                Debug.Log("hit");
-                parent.parent.SetData("target", hit.transform);
-                state = NodeState.SUCCESS;
-                return state;
+                //Debug.Log("hit");
+                if (hit.transform.gameObject.GetComponent<PlayerControllerWASD>())
+                {
+                    Debug.Log("hit");
+                    parent.parent.SetData("target", hit.transform);
+                    state = NodeState.SUCCESS;
+                    return state;
+                }
             }
 
         }

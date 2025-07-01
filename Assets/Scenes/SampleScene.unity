@@ -2200,7 +2200,7 @@ GameObject:
   - component: {fileID: 410185203}
   - component: {fileID: 410185202}
   - component: {fileID: 410185201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
