@@ -3207,7 +3207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &614358419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5172,7 +5172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &895839410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8970,6 +8970,7 @@ GameObject:
   - component: {fileID: 1794553167}
   - component: {fileID: 1794553168}
   - component: {fileID: 1794553169}
+  - component: {fileID: 1794553170}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -9452,6 +9453,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemRuntimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
+--- !u!114 &1794553170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794553151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73dad4ce0da86484c8d31bd4e2a35a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: {fileID: 11400000, guid: 80f8488dc51db3b4ca197da812fc1a07, type: 2}
 --- !u!1 &1814700820
 GameObject:
   m_ObjectHideFlags: 0

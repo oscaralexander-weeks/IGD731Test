@@ -21,8 +21,7 @@ public class ShooterBT : BTree
 
         Node root = new Selector(new List<Node>
         {
-            new CheckPlayerStats(_player),
-
+    
             new Sequence(new List<Node>
             {
                 new CheckInRangeShooter(transform),
