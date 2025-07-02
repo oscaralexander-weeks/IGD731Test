@@ -14,6 +14,8 @@ public class TaskShoot : Node
     private GameObject _projectilePrefab;
     private Transform _projectileSpawn;
     private float _shotSpeed;
+    private float _cooldownTimer = 0f;
+    private float _cooldownTime = 1f;
 
     public TaskShoot(GameObject projectilePrefab, Transform projectileSpawn, float shotSpeed)
     {
@@ -33,29 +35,21 @@ public class TaskShoot : Node
         }
 
         Transform target = (Transform)t;
-        Vector3 direction = (target.position - _projectileSpawn.position).normalized;
+        _cooldownTimer -= Time.deltaTime;
 
-        if (!isAttacking)
+        if(_cooldownTimer < 0.01f)
         {
-            isAttacking = true;
-            attackTimer = attackDuration;
+            Vector3 direction = (target.position - _projectileSpawn.position).normalized;
+
             GameObject bullet = ObjectPoolManager.SpawnObject(_projectilePrefab, _projectileSpawn.position, Quaternion.LookRotation(direction), ObjectPoolManager.PoolType.GameObject);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * _shotSpeed;
+            bullet.GetComponent<Rigidbody>().velocity = direction * _shotSpeed;
+
+            _cooldownTimer = _cooldownTime;
         }
 
-        if (attackTimer > 0)
-        {
-            attackTimer -= Time.deltaTime;
-            state = NodeState.RUNNING;
-            return state;
-        }
-        else
-        {
+        state = NodeState.SUCCESS;
+        return state;
 
-            state = NodeState.SUCCESS;
-            isAttacking = false;
-            return state;
-        }
     }
 
 }

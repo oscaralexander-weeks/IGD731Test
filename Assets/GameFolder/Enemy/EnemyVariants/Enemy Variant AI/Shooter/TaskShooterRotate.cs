@@ -16,7 +16,7 @@ public class TaskShooterRotate : Node
     {
         _transform.Rotate(0, 20 * Time.deltaTime, 0);
 
-        state = NodeState.SUCCESS;
+        state = NodeState.RUNNING;
         return state;
     }
 }

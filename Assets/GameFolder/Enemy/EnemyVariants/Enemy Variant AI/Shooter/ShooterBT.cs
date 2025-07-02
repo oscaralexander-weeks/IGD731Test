@@ -25,6 +25,7 @@ public class ShooterBT : BTree
             {
                 new CheckPlayerStats(_player),
                 new CheckInRangeShooter(transform),
+                new TaskAimAtPlayer(transform),
                 new TaskShoot(ShotPrefab, transform, ShotSpeed)
             }),
 
