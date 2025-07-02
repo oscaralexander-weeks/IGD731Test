@@ -5,8 +5,7 @@ using BehaviourTree;
 
 public class CheckInRangeShooter : Node 
 {
-    
-    public static int _enemyLayer = 1 << 6;
+
     private Transform _transform;
 
     public CheckInRangeShooter(Transform transform)
@@ -23,8 +22,10 @@ public class CheckInRangeShooter : Node
 
         if (t == null)
         {
+            LayerMask playerLayer = LayerMask.GetMask("Player");
+
             RaycastHit hit;
-            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 25, _enemyLayer))
+            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 25, playerLayer))
             {
                 //Debug.Log("hit");
                 if (hit.transform.gameObject.GetComponent<PlayerControllerWASD>())
