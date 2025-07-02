@@ -6,11 +6,6 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class TaskShoot : Node
 {
-
-    private bool isAttacking;
-    private float attackTimer = 0f;
-    private float attackDuration = 3f;
-
     private GameObject _projectilePrefab;
     private Transform _projectileSpawn;
     private float _shotSpeed;

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Charger : Enemy
 {
-    public Transform player;
+    private Transform _player;
     public float chargeSpeed = 10f;
     public float chargeDistance = 5f;
     public float pauseTime = 1.5f;
@@ -13,6 +13,7 @@ public class Charger : Enemy
     void Start()
     {
         StartCoroutine(ChargeLoop());
+        _player = GameObject.FindObjectOfType<PlayerControllerWASD>().GetComponent<Transform>();
     }
 
     IEnumerator ChargeLoop()
@@ -21,7 +22,7 @@ public class Charger : Enemy
         {
             yield return new WaitForSeconds(pauseTime);
 
-            Vector3 direction = (player.position - transform.position).normalized;
+            Vector3 direction = (_player.position - transform.position).normalized;
             Vector3 startPosition = transform.position;
             Vector3 targetPosition = startPosition + direction * chargeDistance;
 
