@@ -12,12 +12,12 @@ public class AttackNode : Node
     private float attackTimer = 0f;
     private float attackDuration = 3f;
 
-    private FloatVariable _value;
+    private PlayerStats _player;
     
 
-    public AttackNode(FloatVariable value)
+    public AttackNode(PlayerStats player)
     {
-        _value = value;
+        _player = player;
     }
 
     public override NodeState Evaluate()
@@ -34,7 +34,7 @@ public class AttackNode : Node
         {
             Debug.Log("Attack started!");
             //GuardBT.HP -= 10;
-            _value.Value -= 10;
+            _player.TakeDamage(PatrolBTVariant.damage);
             isAttacking = true;
             attackTimer = attackDuration;
         }

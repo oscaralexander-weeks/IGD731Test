@@ -9,17 +9,17 @@ public class PatrolBTVariant : BTree
     public static float speed = 3f;
     public static float fovRange = 6f;
     public static float attackRange = 3f;
-    [SerializeField] private FloatVariable HP;
+    public static int damage = 10;
 
     //additions I've made specific to this game 
     private Enemy _enemy;
-    private PlayerControllerWASD _player;
+    private PlayerStats _player;
 
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
-        _player = GameObject.FindObjectOfType<PlayerControllerWASD>();
+        _player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
     protected override Node SetUpTree()
@@ -30,13 +30,14 @@ public class PatrolBTVariant : BTree
             {
                 new CheckPlayerStats(_player),
                 new CheckEnemyInAttackRangeBasic(transform),
-                new AttackNode(HP)
+                new AttackNode(_player)
             }),
             new BehaviourTree.Sequence(new List<Node>
         {
-            new CheckPlayerStats(_player),
-            new CheckPlayerInRangeRay(transform),
-            new TaskGoToTarget(transform)
+                new CheckStatusEffects(_enemy),
+                new CheckPlayerStats(_player),
+                new CheckPlayerInRangeRay(transform),
+                new TaskGoToTarget(transform)
         }),
             new TaskPatrol(transform, waypoints)
         });

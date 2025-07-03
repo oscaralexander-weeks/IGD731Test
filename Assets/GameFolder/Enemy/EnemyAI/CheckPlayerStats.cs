@@ -6,9 +6,9 @@ using BehaviourTree;
 public class CheckPlayerStats : Node
 {
 
-    private PlayerControllerWASD _player;
+    private PlayerStats _player;
 
-    public CheckPlayerStats(PlayerControllerWASD player)
+    public CheckPlayerStats(PlayerStats player)
     {
         _player = player;
     }

@@ -8,12 +8,12 @@ public class ChargerBTree : BTree
     public static float fovRange = 6f;
     
     private Enemy _enemy;
-    private PlayerControllerWASD _player;
+    private PlayerStats _player;
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
-        _player = GameObject.FindObjectOfType<PlayerControllerWASD>();
+        _player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
     protected override Node SetUpTree()

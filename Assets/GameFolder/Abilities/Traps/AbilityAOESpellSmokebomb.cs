@@ -29,7 +29,7 @@ public class AbilityAOESpellSmokebomb : AbilityBaseClass
 
         foreach (Collider c in colliders)
         {
-            if (c.TryGetComponent<PlayerControllerWASD>(out PlayerControllerWASD player))
+            if (c.TryGetComponent<PlayerStats>(out PlayerStats player))
             {
                 if (player != null)
                 {

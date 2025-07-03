@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
-    public FloatVariable HP;
 
+    [Header("Stats")]
+    public FloatVariable HP;
+    public bool IsStealth;
+
+    [Header("Events")]
+    public UnityEvent OnPlayerHit;
+    public UnityEvent OnPlayerDeath;
+
+    private void Update()
+    {
+        CheckStealth();
+    }
 
 
     public void TakeDamage(int damage)
@@ -16,6 +28,27 @@ public class PlayerStats : MonoBehaviour
             Debug.LogWarning("HP not assigned");
         }
 
+        if(HP.Value <= 0)
+        {
+            OnPlayerDeath?.Invoke();
+        }
+
         HP.ApplyChange(-damage);
+        OnPlayerDeath?.Invoke();
+    }
+
+    private void CheckStealth()
+    {
+        if (IsStealth)
+        {
+            StartCoroutine(ResetStealth());
+        }
+    }
+
+    private IEnumerator ResetStealth()
+    {
+        yield return new WaitForSeconds(4);
+
+        IsStealth = false;
     }
 }

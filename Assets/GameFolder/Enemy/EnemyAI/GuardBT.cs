@@ -10,16 +10,17 @@ public class GuardBT : BTree
     public static float speed = 3f;
     public static float fovRange = 6f;
     public static float attackRange = 3f;
+    public static int damage = 10;
 
     //additions I've made specific to this game 
     public FloatVariable HP;
     private Enemy _enemy;
-    private PlayerControllerWASD _player;
+    private PlayerStats _player;
 
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();
-        _player = GameObject.FindObjectOfType<PlayerControllerWASD>();
+        _player = GameObject.FindObjectOfType<PlayerStats>();
     }
 
     protected override Node SetUpTree()
@@ -58,11 +59,12 @@ public class GuardBT : BTree
         {
             new CheckPlayerStats(_player),
             new CheckEnemyInAttackRange(transform),
-            new AttackNode(HP)
+            new AttackNode(_player)
         }),
 
             new BehaviourTree.Sequence(new List<Node>
             {
+                new CheckStatusEffects(_enemy),
                 new CheckPlayerStats(_player),
                 new CheckEnemyInFOVRange(transform),
                 new TaskGoToTarget(transform),

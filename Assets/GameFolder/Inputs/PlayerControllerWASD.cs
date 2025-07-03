@@ -12,7 +12,6 @@ public class PlayerControllerWASD : MonoBehaviour
     private Vector3 _rotationTarget;
     private bool _canMove = true;
 
-    public bool IsStealth;
     public void OnMove(InputAction.CallbackContext context)
     {
         _move = context.ReadValue<Vector2>();
@@ -36,7 +35,6 @@ public class PlayerControllerWASD : MonoBehaviour
         }
 
         MovePlayerWithAim();
-        CheckStealth();
 
         //MovePlayer();
     }
@@ -60,21 +58,6 @@ public class PlayerControllerWASD : MonoBehaviour
 
             transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
         }
-    }
-
-    private void CheckStealth()
-    {
-        if (IsStealth)
-        {
-            StartCoroutine(ResetStealth());
-        }
-    }
-
-    private IEnumerator ResetStealth()
-    {
-        yield return new WaitForSeconds(4);
-
-        IsStealth = false;
     }
 
     //public void MovePlayer()
