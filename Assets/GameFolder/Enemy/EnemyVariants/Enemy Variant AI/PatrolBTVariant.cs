@@ -30,7 +30,7 @@ public class PatrolBTVariant : BTree
             {
                 new CheckPlayerStats(_player),
                 new CheckEnemyInAttackRangeBasic(transform),
-                new AttackNode(_player, transform)
+                new AttackNode(_player)
             }),
             new BehaviourTree.Sequence(new List<Node>
         {

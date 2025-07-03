@@ -11,15 +11,10 @@ public class AttackNode : Node
     private float _attackCounter = 0f;
 
     private PlayerStats _player;
-    private Transform _transform;
 
-    public static int _playerLayer = 1 << 6;
-    private float _castRadius = 4f;
-
-    public AttackNode(PlayerStats player, Transform transform)
+    public AttackNode(PlayerStats player)
     {
         _player = player;
-        _transform = transform;
     }
 
     public override NodeState Evaluate()
