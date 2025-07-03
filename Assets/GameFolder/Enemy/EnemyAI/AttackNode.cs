@@ -6,11 +6,9 @@ using BehaviourTree;
 using Unity.VisualScripting;
 public class AttackNode : Node
 {
-    //private static int _enemyLayer = 1 << 6;
 
-    private bool isAttacking;
-    private float attackTimer = 0f;
-    private float attackDuration = 3f;
+    private float _attackTime = 1f;
+    private float _attackCounter = 0f;
 
     private PlayerStats _player;
     
@@ -22,38 +20,15 @@ public class AttackNode : Node
 
     public override NodeState Evaluate()
     {
-        object t = GetData("target");
-
-        if (t == null)
+        _attackCounter += Time.deltaTime;
+        if(_attackCounter >= _attackTime)
         {
-            state = NodeState.FAILURE;
-            return state;
-        }
-
-        if (!isAttacking)
-        {
-            Debug.Log("Attack started!");
-            //GuardBT.HP -= 10;
             _player.TakeDamage(PatrolBTVariant.damage);
-            isAttacking = true;
-            attackTimer = attackDuration;
+            _attackCounter = 0f;
         }
 
-        // Decrement the attack timer.
-        if (attackTimer > 0)
-        {
-            attackTimer -= Time.deltaTime;
-            state = NodeState.RUNNING;
-            return state;
-        }
-        else
-        {
-            // Attack finished.
-            Debug.Log("Attack executed after " + attackDuration + " seconds.");
-            state = NodeState.SUCCESS;
-            isAttacking = false;  // Reset for the next attack (if desired).
-            return state;
-        }
+        state = NodeState.RUNNING;
+        return state;
     }
 
     
