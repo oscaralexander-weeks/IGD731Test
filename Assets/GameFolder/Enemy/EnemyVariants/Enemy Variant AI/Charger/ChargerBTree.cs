@@ -5,8 +5,6 @@ using BehaviourTree;
 
 public class ChargerBTree : BTree
 {
-    public Transform[] waypoints;
-    public static float speed = 3f;
     public static float fovRange = 6f;
     
     private Enemy _enemy;
@@ -30,12 +28,7 @@ public class ChargerBTree : BTree
             new TaskChargeAttack(transform)
         }),
 
-            new BehaviourTree.Sequence(new List<Node>
-            {
-                new CheckPlayerStats(_player),
-                new CheckEnemyInFOVRange(transform),
-            }),
-            new TaskPatrol(transform, waypoints)
+            new CheckEnemyInFOVRange(transform)
 
         });
 
