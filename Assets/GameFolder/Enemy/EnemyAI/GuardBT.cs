@@ -59,7 +59,7 @@ public class GuardBT : BTree
         {
             new CheckPlayerStats(_player),
             new CheckEnemyInAttackRange(transform),
-            new AttackNode(_player)
+            new AttackNode(_player, transform)
         }),
 
             new BehaviourTree.Sequence(new List<Node>
