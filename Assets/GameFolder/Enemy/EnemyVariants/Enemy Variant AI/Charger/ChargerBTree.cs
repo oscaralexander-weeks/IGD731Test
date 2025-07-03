@@ -34,7 +34,6 @@ public class ChargerBTree : BTree
             {
                 new CheckPlayerStats(_player),
                 new CheckEnemyInFOVRange(transform),
-                new TaskGoToTarget(transform),
             }),
             new TaskPatrol(transform, waypoints)
 

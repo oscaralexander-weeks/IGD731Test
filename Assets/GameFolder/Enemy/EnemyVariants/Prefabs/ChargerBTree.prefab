@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 321483626330395287}
   - component: {fileID: 4508331848553752081}
   - component: {fileID: 3458225726068730171}
-  - component: {fileID: 839621183462670479}
   - component: {fileID: 5593786221662264848}
   m_Layer: 8
   m_Name: ChargerBTree
@@ -116,7 +115,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4857908780230105778}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff8d42186c6dbce42ba8a4483b6f2d77, type: 3}
   m_Name: 
@@ -172,32 +171,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &839621183462670479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4857908780230105778}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757cb900d7367b4589b9984d359bb84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runtimeSet: {fileID: 11400000, guid: 0070de55945c65b488145b324f4fa9e3, type: 2}
-  onUnitDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onUnitHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damageParticles: {fileID: 0}
-  enemyName: Charger
-  unitHealth: 100
-  HasStatusEffect: 0
-  chargeSpeed: 10
-  chargeDistance: 5
-  pauseTime: 1.5
 --- !u!114 &5593786221662264848
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1629,7 +1629,7 @@ PrefabInstance:
     - target: {fileID: 1019614801754298049, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4752163889452605818, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
@@ -9969,6 +9969,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909531281}
   m_CullTransparentMesh: 1
+--- !u!1001 &1912667082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4857908780230105778, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_Name
+      value: ChargerBTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593786221662264848, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1883361868}
+    - target: {fileID: 5593786221662264848, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 458836315}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.536385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.435858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675019035822263013, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 017089402d64391469e17d97c76de631, type: 3}
 --- !u!1 &1921123630
 GameObject:
   m_ObjectHideFlags: 0
@@ -10938,7 +11016,7 @@ PrefabInstance:
     - target: {fileID: 6016680093123843682, guid: 006894bf5e4485246a45e9c006b02596,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10974,3 +11052,4 @@ SceneRoots:
   - {fileID: 324871315}
   - {fileID: 410185204}
   - {fileID: 2556764766036112211}
+  - {fileID: 1912667082}

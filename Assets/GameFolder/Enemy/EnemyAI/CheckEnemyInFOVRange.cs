@@ -27,7 +27,7 @@ public class CheckEnemyInFOVRange : Node
 
             if(colliders.Length > 0)
             {
-                parent.parent.SetData("target", colliders[0].transform);
+                parent.SetData("target", colliders[0].transform);
                 state = NodeState.SUCCESS;
                 return state;
             }

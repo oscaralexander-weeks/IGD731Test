@@ -4,8 +4,15 @@ using UnityEngine;
 using BehaviourTree;
 public class TaskChargeAttack : Node
 {
-    private float _cooldownTimer = 0f;
-    private float _cooldownTime = 1f;
+    private float dashDuration = 0.3f;
+    private float dashSpeed = 10f;
+    private float cooldownTime = 1f;
+    private float detectionRange = 5f;
+    private float minimumDashRange = 1f;
+
+    private float dashTimer = 0f;
+    private float cooldownTimer = 0f;
+    private bool isDashing = false;
 
     private Transform _transform;
 
@@ -16,35 +23,60 @@ public class TaskChargeAttack : Node
 
     public override NodeState Evaluate()
     {
-        object t = GetData("target");
-        Transform target = (Transform)t;
+        //start dash cooldown
+        if (!isDashing && cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
 
-        if(t == null)
+        object t = GetData("target");
+
+        if (t == null)
         {
             state = NodeState.FAILURE;
             return state;
         }
+            
+        Transform target = (Transform)t;
 
-        if(target != null)
+        //calculate distance between enemy and player to determine if in range to dash
+        float distance = Vector3.Distance(_transform.position, target.position);
+
+        if (isDashing)
         {
-            _cooldownTimer -= Time.deltaTime;
+            Debug.Log("dash");
+            dashTimer -= Time.deltaTime;
+            MoveTowards(target.position, dashSpeed);
 
-            if(_cooldownTimer < 0.01f)
+            if (dashTimer < 0.01f)
             {
-                Vector3 direction = (target.position - _transform.position).normalized;
-
-                if(Vector3.Distance(_transform.position, target.position) < 5f)
-                {
-                    Debug.Log("charge");
-                    _transform.position += direction * 10f * Time.deltaTime;
-                    _cooldownTimer = _cooldownTime;
-                    state = NodeState.RUNNING;
-                    return state;
-                }
+                isDashing = false;
+                cooldownTimer = cooldownTime;
+                state = NodeState.SUCCESS;
+                return state;
             }
+
+            state = NodeState.RUNNING;
+            return state;
+        }
+
+        //intiate dash sequence if in range and not on cooldown
+        if (cooldownTimer < 0.01f && distance < detectionRange && distance > minimumDashRange)
+        {
+            isDashing = true;
+            dashTimer = dashDuration;
+            state = NodeState.RUNNING;
+            return state;
         }
 
         state = NodeState.FAILURE;
         return state;
     }
+
+    private void MoveTowards(Vector3 targetPosition, float speed)
+    {
+        Vector3 dir = (targetPosition - _transform.position).normalized;
+        _transform.Translate(dir * speed * Time.deltaTime, Space.World);
+    }
 }
+
