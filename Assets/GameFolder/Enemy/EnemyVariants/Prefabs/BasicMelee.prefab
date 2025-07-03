@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 488488f309b993c48ad92a1104dee2f7, type: 2}
+  - {fileID: 2100000, guid: 70a0ce446be5cae4b8c0ff4e2941746c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,4 +186,3 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  HP: {fileID: 11400000, guid: 80f8488dc51db3b4ca197da812fc1a07, type: 2}
