@@ -28,13 +28,8 @@ public class AttackNode : Node
         _attackCounter += Time.deltaTime;
         if(_attackCounter >= _attackTime)
         {
-            Collider[] colliders = Physics.OverlapSphere(_transform.position, _castRadius, _playerLayer);
-
-            if(colliders.Length > 0)
-            {
-                _player.TakeDamage(PatrolBTVariant.damage);
-                _attackCounter = 0f;
-            }
+            _player.TakeDamage(PatrolBTVariant.damage);
+            _attackCounter = 0f;
         }
 
         state = NodeState.RUNNING;
