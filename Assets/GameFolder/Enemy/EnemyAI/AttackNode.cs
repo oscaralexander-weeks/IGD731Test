@@ -20,6 +20,7 @@ public class AttackNode : Node
 
     public override NodeState Evaluate()
     {
+
         _attackCounter += Time.deltaTime;
         if(_attackCounter >= _attackTime)
         {
