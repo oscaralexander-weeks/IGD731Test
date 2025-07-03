@@ -7,17 +7,25 @@ using UnityEditor;
 public class CheckStatusEffects : Node
 {
     private Enemy _enemy;
-    public CheckStatusEffects(Enemy enemy)
+    private Transform _target;
+    public CheckStatusEffects(Enemy enemy, Transform target)
     {
         _enemy = enemy;
+        _target = target;
     }
 
     public override NodeState Evaluate()
     {
         object e = GetData("enemy");
+        Enemy enemy = (Enemy)e;
 
         if(e != null)
         {
+            if (enemy.IsHit)
+            {
+                parent.parent.SetData("target", _target);
+            }
+
             state = NodeState.SUCCESS;
             return state;
         }

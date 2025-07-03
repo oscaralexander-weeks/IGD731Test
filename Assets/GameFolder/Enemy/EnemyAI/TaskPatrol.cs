@@ -27,8 +27,7 @@ public class TaskPatrol : Node
         Enemy enemy = (Enemy)GetData("enemy");
         if (enemy != null && enemy.HasStatusEffect)
         {
-            // If stunned, skip movement.
-            state = NodeState.FAILURE;  // or state = NodeState.RUNNING depending on your logic.
+            state = NodeState.FAILURE;
             return state;
         }
 
@@ -55,8 +54,6 @@ public class TaskPatrol : Node
                 _transform.LookAt(wp.position);
             }
         }
-
-        
 
         state = NodeState.RUNNING;
         return state;

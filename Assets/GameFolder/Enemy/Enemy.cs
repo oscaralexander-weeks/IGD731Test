@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public string enemyName;
     public int unitHealth;
     public bool HasStatusEffect;
+    public bool IsHit;
 
     private void OnEnable()
     {

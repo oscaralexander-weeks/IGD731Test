@@ -64,7 +64,7 @@ public class GuardBT : BTree
 
             new BehaviourTree.Sequence(new List<Node>
             {
-                new CheckStatusEffects(_enemy),
+                new CheckStatusEffects(_enemy, _player.transform),
                 new CheckPlayerStats(_player),
                 new CheckEnemyInFOVRange(transform),
                 new TaskGoToTarget(transform),

@@ -34,7 +34,7 @@ public class PatrolBTVariant : BTree
             }),
             new BehaviourTree.Sequence(new List<Node>
         {
-                new CheckStatusEffects(_enemy),
+                new CheckStatusEffects(_enemy, _player.transform),
                 new CheckPlayerStats(_player),
                 new CheckPlayerInRangeRay(transform),
                 new TaskGoToTarget(transform)
