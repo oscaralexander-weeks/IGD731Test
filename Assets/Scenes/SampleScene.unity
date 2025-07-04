@@ -5094,9 +5094,9 @@ MonoBehaviour:
   OnFire:
     m_PersistentCalls:
       m_Calls: []
-  AbilityCountMax: 0
-  AbilityCount: 5
-  HasAbilityCount: 0
+  AbilityCountMax: 3
+  AbilityCount: 3
+  HasAbilityCount: 1
   AbilityPrefab: {fileID: 0}
   onStyleIncrease:
     m_PersistentCalls:
@@ -6444,8 +6444,8 @@ MonoBehaviour:
   OnFire:
     m_PersistentCalls:
       m_Calls: []
-  AbilityCountMax: 5
-  AbilityCount: 5
+  AbilityCountMax: 3
+  AbilityCount: 3
   HasAbilityCount: 1
   AbilityPrefab: {fileID: 5358192789477117397, guid: c6dee75ac5e4aa6458a03bc6db4413c3,
     type: 3}
@@ -8012,9 +8012,9 @@ MonoBehaviour:
   OnFire:
     m_PersistentCalls:
       m_Calls: []
-  AbilityCountMax: 0
-  AbilityCount: 0
-  HasAbilityCount: 0
+  AbilityCountMax: 1
+  AbilityCount: 1
+  HasAbilityCount: 1
   AbilityPrefab: {fileID: 0}
   onStyleIncrease:
     m_PersistentCalls:
