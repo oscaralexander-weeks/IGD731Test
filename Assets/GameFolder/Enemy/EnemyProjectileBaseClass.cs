@@ -19,7 +19,7 @@ public class EnemyProjectileBaseClass : MonoBehaviour
     private void OnEnable()
     {
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
-        Physics.IgnoreLayerCollision(3, 8);
+        Physics.IgnoreLayerCollision(9, 8);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -19,7 +19,7 @@ public class ProjectBaseClass : MonoBehaviour
     private void OnEnable()
     {
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
-        Physics.IgnoreLayerCollision(0, 7);
+        Physics.IgnoreLayerCollision(3, 7);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,7 +33,6 @@ public class ProjectBaseClass : MonoBehaviour
             OnStyleIncrease?.Invoke();
             Destroy(gameObject);
         }
-
     }
 
     private IEnumerator ReturnToPoolAfterTime()

@@ -96,7 +96,7 @@ public class AbilityHandler : MonoBehaviour
             {
                 abilities[index].Ability(testTransform);
                 abilities[index].IsOnCooldown = true;
-                //StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
+                abilities[index].AbilityCount--;
             }
         }
 
@@ -114,7 +114,7 @@ public class AbilityHandler : MonoBehaviour
             {
                 abilities[index].Ability(gameObject.transform);
                 abilities[index].IsOnCooldown = true;
-                //StartCoroutine(Cooldown(abilities[index], abilities[index].AbilityCooldown));
+                abilities[index].AbilityCount--;
             }
         }
 
