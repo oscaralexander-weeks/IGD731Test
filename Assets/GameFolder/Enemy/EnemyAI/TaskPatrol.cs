@@ -33,8 +33,9 @@ public class TaskPatrol : Node
 
         if (_isWaiting)
         {
+            waitTime = Random.Range(1, 4);
             waitCounter += Time.deltaTime;
-            if (waitCounter < waitTime)
+            if (waitCounter > waitTime)
             _isWaiting = false;
         }
         else
