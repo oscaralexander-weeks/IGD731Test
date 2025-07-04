@@ -2020,7 +2020,7 @@ Transform:
   m_GameObject: {fileID: 410185200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.375, y: 1.375, z: 5}
+  m_LocalPosition: {x: -14.125, y: 1.375, z: -8.5}
   m_LocalScale: {x: 8.2501, y: 2.7499502, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2144,7 +2144,7 @@ Transform:
   m_GameObject: {fileID: 410933899}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14, y: 1.5, z: 0}
+  m_LocalPosition: {x: 17.25, y: 1.5, z: -14.75}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2935,7 +2935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &614358419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3190,7 +3190,7 @@ Transform:
   m_GameObject: {fileID: 615772037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1.5, z: -7.5}
+  m_LocalPosition: {x: -17.5, y: 1.5, z: -14.75}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4276,7 +4276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &851941092
 Transform:
   m_ObjectHideFlags: 0
@@ -4900,7 +4900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &895839410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6517,6 +6517,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: unitHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: HasStatusEffect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6707,7 +6717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1259354911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6725,9 +6735,9 @@ RectTransform:
   - {fileID: 1859181901}
   m_Father: {fileID: 271529743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225.86816, y: -120.2964}
   m_SizeDelta: {x: 135.1974, y: 129.3225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1259354912
@@ -7070,7 +7080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1440707833
 Transform:
   m_ObjectHideFlags: 0
@@ -9816,6 +9826,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: unitHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: HasStatusEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4857908780230105778, guid: 017089402d64391469e17d97c76de631,
         type: 3}
       propertyPath: m_Name
@@ -10298,6 +10318,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: unitHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: HasStatusEffect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4752163889452605818, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
