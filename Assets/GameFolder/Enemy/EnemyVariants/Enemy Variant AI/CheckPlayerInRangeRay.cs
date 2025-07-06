@@ -24,7 +24,7 @@ public class CheckPlayerInRangeRay : Node
         if (t == null)
         {
             RaycastHit hit;
-            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50, _enemyLayer))
+            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 50, PatrolBTVariant.enemyDetectionLayers))
             {
                 //Debug.Log("hit");
                 if (hit.transform.gameObject.GetComponent<PlayerControllerWASD>())

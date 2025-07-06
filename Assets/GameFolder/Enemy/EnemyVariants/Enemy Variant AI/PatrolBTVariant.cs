@@ -7,9 +7,10 @@ public class PatrolBTVariant : BTree
 {
     public Transform[] waypoints;
     public static float speed = 3f;
-    public static float fovRange = 6f;
+    public static float fovRange = 3f;
     public static float attackRange = 3f;
     public static int damage = 10;
+    public static LayerMask enemyDetectionLayers;
 
     //additions I've made specific to this game 
     private Enemy _enemy;
@@ -20,6 +21,7 @@ public class PatrolBTVariant : BTree
     {
         _enemy = GetComponent<Enemy>();
         _player = GameObject.FindObjectOfType<PlayerStats>();
+        enemyDetectionLayers = LayerMask.GetMask("Player", "Walls");
     }
 
     protected override Node SetUpTree()
@@ -29,6 +31,7 @@ public class PatrolBTVariant : BTree
             new BehaviourTree.Sequence(new List<Node>
             {
                 new CheckPlayerStats(_player),
+                new CheckEnemyInFOVRange(transform),
                 new CheckEnemyInAttackRangeBasic(transform),
                 new AttackNode(_player)
             }),
@@ -37,6 +40,13 @@ public class PatrolBTVariant : BTree
                 new CheckStatusEffects(_enemy, _player.transform),
                 new CheckPlayerStats(_player),
                 new CheckPlayerInRangeRay(transform),
+                new TaskGoToTarget(transform)
+        }),
+            new BehaviourTree.Sequence(new List<Node>
+        {
+                new CheckStatusEffects(_enemy, _player.transform),
+                new CheckPlayerStats(_player),
+                new CheckEnemyInFOVRange(transform),
                 new TaskGoToTarget(transform)
         }),
             new TaskPatrol(transform, waypoints)
