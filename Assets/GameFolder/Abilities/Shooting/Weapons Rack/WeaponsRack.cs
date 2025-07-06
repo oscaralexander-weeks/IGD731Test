@@ -8,9 +8,13 @@ public class WeaponsRack : MonoBehaviour
     public List<BaseDefaultWeapon> Weapons = new List<BaseDefaultWeapon>();
     [SerializeField] private IconPanelUIAbility weaponUI;
 
+    [Header("Counts")]
     public bool IsOnCooldown;
     public float CooldownTimer;
     public float Cooldown;
+
+    [Header("Events")]
+    public UnityEvent OnStyleIncrease;
 
     private void Update()
     {
@@ -28,6 +32,8 @@ public class WeaponsRack : MonoBehaviour
     {
         if (!IsOnCooldown)
         {
+            OnStyleIncrease?.Invoke();
+
             playerWeapons[0] = Weapons[0];
             playerWeapons[0].AbilityCount = playerWeapons[0].AbilityCountMax;
             if(weaponUI!= null)

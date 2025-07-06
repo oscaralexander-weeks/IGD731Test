@@ -8,6 +8,7 @@ public class AbilityAOESpellBox : AbilityBaseClass
     [Header("Events")]
     public UnityEvent onStyleIncrease;
     public UnityEvent onStyleDecrease;
+    public UnityEvent onStyleBoost;
 
     [Header("AOESpell")]
     public int AOESpellDamage;
@@ -27,8 +28,6 @@ public class AbilityAOESpellBox : AbilityBaseClass
 
     public void CheckAOE(Transform abiltySpawnPoint)
     {
-        //Collider[] colliders = Physics.OverlapSphere(abiltySpawnPoint.position, castRadius, layerAsLayerMask);
-        //int hits = 0
         ClearArray();
         int hitCount = Physics.OverlapBoxNonAlloc(abiltySpawnPoint.position, hitBox, colliders, abiltySpawnPoint.rotation, layerAsLayerMask);
 
@@ -41,30 +40,22 @@ public class AbilityAOESpellBox : AbilityBaseClass
                 if (enemy != null)
                 {
                     enemy.TakeDamage(AOESpellDamage);
-                    //onStyleIncrease?.Invoke();
-                    //hits++;
                 }
             }
         }
 
-        /*
-        foreach (Collider c in colliders)
+        switch (hitCount)
         {
-            if (c.TryGetComponent<Enemy>(out Enemy enemy))
-            {
-                if (enemy != null)
-                {
-                    enemy.TakeDamage(AOESpellDamage);
-                    //onStyleIncrease?.Invoke();
-                    //hits++;
-                }
-            }
+            case 0:
+                onStyleDecrease?.Invoke();
+                break;
+            case 1:
+                onStyleIncrease?.Invoke();
+                break;
+            case > 1:
+                onStyleBoost?.Invoke();
+                break;
         }
-        */
-        //if (hits == 0)
-        //{
-        //    onStyleDecrease?.Invoke();
-        //}
     }
 
     private IEnumerator AttackSequence(Transform abiltySpawnPoint)
@@ -75,7 +66,6 @@ public class AbilityAOESpellBox : AbilityBaseClass
         CheckAOE(abiltySpawnPoint);
         yield return new WaitForSeconds(1f);
         //end particles
-
     }
     
     private void SpawnDamageParticles(Transform abiltySpawnPoint)

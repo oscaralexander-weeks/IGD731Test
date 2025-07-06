@@ -7,8 +7,6 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Systems")]
     public EnemyRuntimeSet runtimeSet;
-    public UnityEvent onUnitDeath;
-    public UnityEvent onUnitHit;
     [SerializeField] private ParticleSystem damageParticles;
     private ParticleSystem instanceDamageParticles;
 
@@ -17,6 +15,12 @@ public class Enemy : MonoBehaviour, IDamageable
     public int unitHealth;
     public bool HasStatusEffect;
     public bool IsHit;
+
+    [Header("Events")]
+    public UnityEvent onUnitDeath;
+    public UnityEvent onUnitHit;
+    public UnityEvent OnStyleIncrease;
+    public UnityEvent OnStyleBoost;
 
     private void OnEnable()
     {
@@ -42,6 +46,15 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        if (HasStatusEffect)
+        {
+            OnStyleBoost?.Invoke();
+        }
+        else if (!HasStatusEffect)
+        {
+            OnStyleIncrease?.Invoke();
+        }
+
         onUnitDeath?.Invoke();
         Destroy(gameObject);
     }

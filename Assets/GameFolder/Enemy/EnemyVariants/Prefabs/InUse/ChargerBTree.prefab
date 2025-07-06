@@ -121,6 +121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeSet: {fileID: 11400000, guid: 0070de55945c65b488145b324f4fa9e3, type: 2}
+  damageParticles: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2,
+    type: 3}
+  enemyName: EnemyBasic
+  unitHealth: 200
+  HasStatusEffect: 0
+  IsHit: 0
   onUnitDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -139,11 +145,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  damageParticles: {fileID: 1429954232896169632, guid: 83036083a4ebcd34f98131bd3cf6f4d2,
-    type: 3}
-  enemyName: EnemyBasic
-  unitHealth: 200
-  HasStatusEffect: 0
+  OnStyleIncrease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2e20fefa97f54b246863a0863c09ece9, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStyleBoost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f1aed27537620fc4a9df52984ba638e6, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &3458225726068730171
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,6 +214,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143ce9bbfd2f916468724ce1ffd234ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
