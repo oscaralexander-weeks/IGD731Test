@@ -24,6 +24,7 @@ public class ShooterBT : BTree
 
             new Sequence(new List<Node>
             {
+                new CheckStatusEffects(_enemy, _player.transform),
                 new CheckPlayerStats(_player),
                 new CheckInRangeShooter(transform),
                 new TaskAimAtPlayer(transform),

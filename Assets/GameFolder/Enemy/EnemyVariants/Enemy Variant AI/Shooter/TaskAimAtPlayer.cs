@@ -25,7 +25,6 @@ public class TaskAimAtPlayer : Node
         }
 
         _transform.LookAt(target);
-
         state = NodeState.RUNNING;
         return state;
     }

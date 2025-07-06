@@ -8,6 +8,10 @@ public class CheckStatusEffects : Node
 {
     private Enemy _enemy;
     private Transform _target;
+
+    private float _responseTimer = 0f;
+    private float _responseTime = 0.2f;
+
     public CheckStatusEffects(Enemy enemy, Transform target)
     {
         _enemy = enemy;
@@ -23,7 +27,12 @@ public class CheckStatusEffects : Node
         {
             if (enemy.IsHit)
             {
-                parent.parent.SetData("target", _target);
+                _responseTimer += Time.deltaTime;
+                if(_responseTimer > _responseTime)
+                {
+                    parent.parent.SetData("target", _target);
+                    _responseTimer = 0f;
+                }
             }
 
             state = NodeState.SUCCESS;
