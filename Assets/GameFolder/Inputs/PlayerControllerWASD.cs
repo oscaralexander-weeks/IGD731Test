@@ -41,22 +41,25 @@ public class PlayerControllerWASD : MonoBehaviour
 
     public void MovePlayerWithAim()
     {
-        var lookPosition = _rotationTarget - transform.position;
-        lookPosition.y = 0;
-        var rotation = Quaternion.LookRotation(lookPosition);
-
-        Vector3 aimDirection = new Vector3(_rotationTarget.x, 0f, _rotationTarget.z);
-
-        if(aimDirection != Vector3.zero)
+        if (!RuntimeManager.IsPaused)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
-        }
+            var lookPosition = _rotationTarget - transform.position;
+            lookPosition.y = 0;
+            var rotation = Quaternion.LookRotation(lookPosition);
 
-        if (_canMove)
-        {
-            Vector3 movement = new Vector3(_move.x, 0f, _move.y);
+            Vector3 aimDirection = new Vector3(_rotationTarget.x, 0f, _rotationTarget.z);
 
-            transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
+            if(aimDirection != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.15f);
+            }
+
+            if (_canMove)
+            {
+                Vector3 movement = new Vector3(_move.x, 0f, _move.y);
+
+                transform.Translate(movement * speed * SpeedMultiplyer * Time.deltaTime, Space.World);
+            }
         }
     }
 

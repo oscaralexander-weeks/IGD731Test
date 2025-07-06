@@ -92,7 +92,7 @@ public class AbilityHandler : MonoBehaviour
     {
         if(abilities.Count > 0 && abilities[index] != null)
         {
-            if (!abilities[index].IsOnCooldown)
+            if (!abilities[index].IsOnCooldown && abilities[index].AbilityCount > 0)
             {
                 abilities[index].Ability(testTransform);
                 abilities[index].IsOnCooldown = true;

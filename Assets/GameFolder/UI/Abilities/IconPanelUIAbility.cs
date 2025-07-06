@@ -36,7 +36,7 @@ public class IconPanelUIAbility : MonoBehaviour
                 count.text = Ability.AbilityCount.ToString();
             }
 
-            if(Ability.Cooldown == Ability.CooldownTimer)
+            if(Ability.Cooldown == Ability.CooldownTimer && Ability.AbilityCount > 0)
             {
                 cooldown.text = "Ready";
             }

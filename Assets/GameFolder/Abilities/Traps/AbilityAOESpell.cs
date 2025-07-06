@@ -10,6 +10,8 @@ public class AbilityAOESpell : AbilityBaseClass
 
     [Header("Events")]
     public UnityEvent onStyleIncrease;
+    public UnityEvent onStyleLevel;
+    public UnityEvent onStyleBoost;
     public UnityEvent onStyleDecrease;
 
     [Header("AOESpell")]
@@ -53,10 +55,10 @@ public class AbilityAOESpell : AbilityBaseClass
                 onStyleIncrease?.Invoke();
                 break;
             case 2:
-                Debug.Log("level");
+                onStyleLevel?.Invoke();
                 break;
-            case 3:
-                Debug.Log("boost");
+            case > 2:
+                onStyleBoost?.Invoke();
                 break;
         }
     }

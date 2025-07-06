@@ -38,9 +38,14 @@ public class AbilityAOESpellSmokebomb : AbilityBaseClass
             }
         }
 
-        if (hits == 0)
+        switch (hits)
         {
-            onStyleDecrease?.Invoke();
+            case 0:
+                onStyleDecrease?.Invoke();
+                break;
+            case > 0:
+                onStyleIncrease?.Invoke();
+                break;
         }
     }
 

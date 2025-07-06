@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Trap : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class Trap : MonoBehaviour
     public float trapInitialization;
     public float statusDuration;
 
+    public UnityEvent OnStyleLevel;
+
     private void OnTriggerEnter(Collider other)
     {
         enemy = other.GetComponent<Enemy>();
 
         if(enemy != null)
         {
+            OnStyleLevel?.Invoke();
             StartCoroutine(TrapInitialization());
         }
     }
