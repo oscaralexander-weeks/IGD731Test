@@ -14,7 +14,7 @@ public class DartTrap : TrapTrigger
     {
         PlayerControllerWASD player = other.GetComponent<PlayerControllerWASD>();
 
-        if(other != null)
+        if(player != null)
         {
             TrapTriggered();
         }

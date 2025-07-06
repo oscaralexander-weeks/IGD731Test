@@ -1544,6 +1544,7 @@ MonoBehaviour:
     type: 3}
   ProjectileSpawn: {fileID: 312194688}
   ShotSpeed: 25
+  CanShoot: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -10647,7 +10648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b566ab05660f9f74fa97dbb012d743e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   SpeedMultiplyer: 1
 --- !u!54 &1794553164
 Rigidbody:
