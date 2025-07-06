@@ -30,11 +30,11 @@ public class PlayerStats : MonoBehaviour
 
         if(HP.Value <= 0)
         {
-            OnPlayerDeath?.Invoke();
+            Die();
         }
 
         HP.ApplyChange(-damage);
-        OnPlayerDeath?.Invoke();
+        OnPlayerHit?.Invoke();
     }
 
     private void CheckStealth()
@@ -50,5 +50,10 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(4);
 
         IsStealth = false;
+    }
+
+    public void Die()
+    {
+        OnPlayerDeath?.Invoke();
     }
 }
