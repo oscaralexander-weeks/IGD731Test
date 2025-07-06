@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -37,15 +38,26 @@ public class AbilityAOESpell : AbilityBaseClass
                 if (enemy != null)
                 {
                     enemy.TakeDamage(AOESpellDamage);
-                    onStyleIncrease?.Invoke();
+                    //onStyleIncrease?.Invoke();
                     hits++;
                 }
             }
         }
 
-        if (hits == 0)
+        switch (hits)
         {
-            onStyleDecrease?.Invoke();
+            case 0:
+                onStyleDecrease?.Invoke();
+                break;
+            case 1:
+                onStyleIncrease?.Invoke();
+                break;
+            case 2:
+                Debug.Log("level");
+                break;
+            case 3:
+                Debug.Log("boost");
+                break;
         }
     }
 
