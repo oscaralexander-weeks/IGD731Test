@@ -10,32 +10,14 @@ public class ProjectBaseClass : MonoBehaviour
     public int damage;
     public float DestroyTime;
 
-    private Coroutine _returnToPoolTimerCoroutine;
+    public Coroutine _returnToPoolTimerCoroutine;
 
     [Header("Style Events")]
+    public bool CanDecreaseStyle;
     public UnityEvent OnStyleIncrease;
     public UnityEvent OnStyleDecrease;
 
-    private void OnEnable()
-    {
-        _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
-        Physics.IgnoreLayerCollision(3, 7);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
-        if(enemy != null)
-        {
-            enemy.TakeDamage(damage);
-            enemy.IsHit = true;
-            //OnStyleIncrease?.Invoke();
-            Destroy(gameObject);
-        }
-    }
-
-    private IEnumerator ReturnToPoolAfterTime()
+    public IEnumerator ReturnToPoolAfterTime()
     {
         float elapsedTime = 0f;
         while (elapsedTime < DestroyTime)
@@ -45,7 +27,10 @@ public class ProjectBaseClass : MonoBehaviour
         }
 
         ObjectPoolManager.ReturnObjectToPool(gameObject);
-        OnStyleDecrease?.Invoke();
+        if (CanDecreaseStyle)
+        {
+            OnStyleDecrease?.Invoke();
+        }
     }
 
 }

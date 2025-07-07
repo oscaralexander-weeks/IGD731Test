@@ -1,26 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class EnemyProjectileBaseClass : ProjectBaseClass
+public class PlayerProjectile : ProjectBaseClass
 {
     private void OnEnable()
     {
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
-        Physics.IgnoreLayerCollision(9, 8);
+        Physics.IgnoreLayerCollision(3, 7);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        PlayerStats player = collision.gameObject.GetComponent<PlayerStats>();
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
-        if (player != null)
+        if (enemy != null)
         {
-            player.TakeDamage(damage);
-            OnStyleDecrease?.Invoke();
+            enemy.TakeDamage(damage);
+            enemy.IsHit = true;
+            //OnStyleIncrease?.Invoke();
             Destroy(gameObject);
         }
-
     }
 }

@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class EnemyProjectileBaseClass : ProjectBaseClass
+public class TrapProjectile : ProjectBaseClass
 {
     private void OnEnable()
     {
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
-        Physics.IgnoreLayerCollision(9, 8);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         PlayerStats player = collision.gameObject.GetComponent<PlayerStats>();
+
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            enemy.IsHit = true;
+            OnStyleIncrease?.Invoke();
+            Destroy(gameObject);
+        }
 
         if (player != null)
         {
@@ -21,6 +28,5 @@ public class EnemyProjectileBaseClass : ProjectBaseClass
             OnStyleDecrease?.Invoke();
             Destroy(gameObject);
         }
-
     }
 }

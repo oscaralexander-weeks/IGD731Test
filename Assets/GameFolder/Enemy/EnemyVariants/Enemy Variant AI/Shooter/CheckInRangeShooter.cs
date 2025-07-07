@@ -25,7 +25,7 @@ public class CheckInRangeShooter : Node
             //LayerMask playerLayer = LayerMask.GetMask("Player");
 
             RaycastHit hit;
-            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 25, PatrolBTVariant.enemyDetectionLayers))
+            if (Physics.Raycast(_transform.position, _transform.forward, out hit, 25, ShooterBT.enemyDetectionLayers))
             {
                 //Debug.Log("hit");
                 if (hit.transform.gameObject.GetComponent<PlayerControllerWASD>())

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2875954995988722430}
   - component: {fileID: 6509741150040629832}
   - component: {fileID: 1720809571261277744}
-  - component: {fileID: 4602108668441637350}
+  - component: {fileID: 1233750311859704381}
   m_Layer: 3
   m_Name: TrapShot
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4602108668441637350
+--- !u!114 &1233750311859704381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,18 +143,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3036956074317436997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768f84e63bfb292429a15d6a51be0df1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d098902d1578464ea6a9ef4365bdf20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnProjectileHit:
     m_PersistentCalls:
       m_Calls: []
   damage: 25
-  DestroyTime: 4
+  DestroyTime: 3
+  CanDecreaseStyle: 0
   OnStyleIncrease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2e20fefa97f54b246863a0863c09ece9, type: 2}
+      - m_Target: {fileID: 11400000, guid: f1aed27537620fc4a9df52984ba638e6, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

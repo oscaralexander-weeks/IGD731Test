@@ -3871,7 +3871,7 @@ MonoBehaviour:
   variableMax: {fileID: 11400000, guid: 230c3a47ab193184e843b9ceb6b12c38, type: 2}
   slider: {fileID: 616295226}
   isReset: 1
-  VariableCap: 0
+  VariableCap: 115
 --- !u!114 &616295226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,6 +4864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicMelee (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1019614801754298049, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
       propertyPath: unitHealth
@@ -5304,6 +5309,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicMelee (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1019614801754298049, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
       propertyPath: unitHealth
@@ -5696,7 +5706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &851941092
 Transform:
   m_ObjectHideFlags: 0
@@ -5705,15 +5715,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851941091}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071062, z: -0, w: 0.7071074}
+  m_LocalPosition: {x: 17.750004, y: 0, z: -7.4999924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 312194688}
   - {fileID: 1546725931}
   m_Father: {fileID: 1402731265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &859153608
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,6 +13419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019614801754298049, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
