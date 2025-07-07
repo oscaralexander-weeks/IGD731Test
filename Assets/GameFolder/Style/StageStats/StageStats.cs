@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class StageStats : ScriptableObject
 {
-    [SerializeField] private FloatVariable Hits, Misses, Entertainment, Style;
+    public FloatVariable Hits, Misses, Entertainment, Style;
 }
