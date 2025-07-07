@@ -40,7 +40,7 @@ public class TertiaryShoot : BaseDefaultWeapon
         for (int i = 0; i < pelletCount; i++)
         {
 
-            float currentAngle = Random.Range(15, 30);
+            float currentAngle = Random.Range(0, 15);
 
             Quaternion pelletRotation = Firepoint.rotation * Quaternion.Euler(0f, currentAngle, 0f);
 
