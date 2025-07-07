@@ -30,7 +30,7 @@ public class ProjectBaseClass : MonoBehaviour
         {
             enemy.TakeDamage(damage);
             enemy.IsHit = true;
-            OnStyleIncrease?.Invoke();
+            //OnStyleIncrease?.Invoke();
             Destroy(gameObject);
         }
     }
@@ -45,6 +45,7 @@ public class ProjectBaseClass : MonoBehaviour
         }
 
         ObjectPoolManager.ReturnObjectToPool(gameObject);
+        OnStyleDecrease?.Invoke();
     }
 
 }
