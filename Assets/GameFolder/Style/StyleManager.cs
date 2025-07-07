@@ -36,6 +36,7 @@ public class StyleManager : MonoBehaviour
             < 60 => "C",
             < 75 => "B",
             < 90 => "A",
+            < 150 => "S",
             _ => styleTextComponent.text // fallback
         };
     }

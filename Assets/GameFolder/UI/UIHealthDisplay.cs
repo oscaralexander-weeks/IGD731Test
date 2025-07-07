@@ -22,8 +22,15 @@ public class UIHealthDisplay : MonoBehaviour
     void Update()
     {
         if (slider != null && variable != null)
+        {
+            slider.value = variable.Value;
+        }
 
-        slider.value = variable.Value;
+        if(variable.Value > 115)
+        {
+            variable.Value = 115;
+        }
+
     }
 
 
