@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class SimpleUnitProjectile : MonoBehaviour
 {
+    [Header("Prefabs")]
     public GameObject ProjectilePrefab;
     public Transform ProjectileSpawn;
-    public float ShotSpeed;
 
+    [Header("Counts")]
+    public float ShotSpeed;
+    public float Cooldown;
     public bool CanShoot;
     
     public void ShootProjectile()
@@ -35,7 +38,7 @@ public class SimpleUnitProjectile : MonoBehaviour
     {
         CanShoot = false;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Cooldown);
 
         CanShoot = true;
     }

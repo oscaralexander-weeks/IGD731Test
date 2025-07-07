@@ -1855,6 +1855,7 @@ MonoBehaviour:
     type: 3}
   ProjectileSpawn: {fileID: 312194688}
   ShotSpeed: 25
+  Cooldown: 15
   CanShoot: 1
 --- !u!1 &330585543
 GameObject:
