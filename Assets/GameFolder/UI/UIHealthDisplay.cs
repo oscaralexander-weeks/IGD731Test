@@ -9,6 +9,8 @@ public class UIHealthDisplay : MonoBehaviour
     public FloatVariable variableMax;
     public Slider slider;
     public bool isReset;
+
+    [SerializeField] private float VariableCap;
     private void Start()
     {
         if (isReset)
@@ -26,9 +28,9 @@ public class UIHealthDisplay : MonoBehaviour
             slider.value = variable.Value;
         }
 
-        if(variable.Value > 115)
+        if(variable.Value > VariableCap)
         {
-            variable.Value = 115;
+            variable.Value = VariableCap;
         }
 
     }

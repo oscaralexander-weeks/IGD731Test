@@ -3871,6 +3871,7 @@ MonoBehaviour:
   variableMax: {fileID: 11400000, guid: 230c3a47ab193184e843b9ceb6b12c38, type: 2}
   slider: {fileID: 616295226}
   isReset: 1
+  VariableCap: 0
 --- !u!114 &616295226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8069,6 +8070,7 @@ MonoBehaviour:
   variableMax: {fileID: 11400000, guid: 0447159aae823224498c52b0643908d3, type: 2}
   slider: {fileID: 1156549042}
   isReset: 1
+  VariableCap: 115
 --- !u!1 &1188713255
 GameObject:
   m_ObjectHideFlags: 0
@@ -11007,7 +11009,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
