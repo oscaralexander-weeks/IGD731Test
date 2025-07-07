@@ -4103,6 +4103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 643540354}
+  - component: {fileID: 643540355}
   m_Layer: 0
   m_Name: UnitDeath
   m_TagString: Untagged
@@ -4125,6 +4126,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195723722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643540355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643540353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86278864c79498a4994ed7a228dd27cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794553170}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: CheckStealthKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &647901091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4844,6 +4873,42 @@ PrefabInstance:
       propertyPath: HasStatusEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4752163889452605818, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5247,6 +5312,42 @@ PrefabInstance:
         type: 3}
       propertyPath: HasStatusEffect
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4752163889452605818, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
@@ -8269,6 +8370,42 @@ PrefabInstance:
       propertyPath: HasStatusEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10427,6 +10564,42 @@ PrefabInstance:
       propertyPath: HasStatusEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885380470191615785, guid: 006894bf5e4485246a45e9c006b02596,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11675,6 +11848,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnStyleBoost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f1aed27537620fc4a9df52984ba638e6, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1814700820
 GameObject:
   m_ObjectHideFlags: 0
@@ -12641,6 +12829,42 @@ PrefabInstance:
       propertyPath: HasStatusEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508331848553752081, guid: 017089402d64391469e17d97c76de631,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4857908780230105778, guid: 017089402d64391469e17d97c76de631,
         type: 3}
       propertyPath: m_Name
@@ -13193,6 +13417,42 @@ PrefabInstance:
         type: 3}
       propertyPath: HasStatusEffect
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: af57c34bd77c4554382a149bf80a6338,
+        type: 2}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092312275366796551, guid: 6aacbf82b2eb9c444b748a913c811898,
+        type: 3}
+      propertyPath: onUnitDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4752163889452605818, guid: 6aacbf82b2eb9c444b748a913c811898,
         type: 3}
