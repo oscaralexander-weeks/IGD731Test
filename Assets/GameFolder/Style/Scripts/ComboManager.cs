@@ -27,4 +27,10 @@ public class ComboManager : MonoBehaviour
         ComboTimer = 0;
     }
 
+    public void EndComboStreak()
+    {
+        Combo.Value = 0;
+        ComboTimer = 0;
+    }
+
 }
