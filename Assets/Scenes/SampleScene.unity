@@ -2973,6 +2973,7 @@ MonoBehaviour:
   style: {fileID: 11400000, guid: 210b06ff3889f9941aaf9bf1936b5378, type: 2}
   styleSlider: {fileID: 616295226}
   styleTextComponent: {fileID: 864560733}
+  StyleSpeedMultipler: 1
 --- !u!4 &486350725
 Transform:
   m_ObjectHideFlags: 0
