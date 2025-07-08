@@ -18,7 +18,7 @@ public class PlayerProjectile : ProjectBaseClass
         {
             enemy.TakeDamage(damage);
             enemy.IsHit = true;
-            //OnStyleIncrease?.Invoke();
+            OnStyleIncrease?.Invoke();
             Destroy(gameObject);
         }
     }
