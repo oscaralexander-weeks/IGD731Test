@@ -9,13 +9,14 @@ public class StyleManager : MonoBehaviour
     [SerializeField] private FloatVariable style;
     [SerializeField] private Slider styleSlider;
     [SerializeField] private TextMeshProUGUI styleTextComponent;
+    [SerializeField] private float StyleSpeedMultipler;
 
     // Update is called once per frame
     void Update()
     {
         if(style != null && style.Value > 0 && styleSlider != null)
         {
-            style.Value -= Time.deltaTime;
+            style.Value -= (float)(Time.deltaTime * StyleSpeedMultipler);
             CheckStyle(styleSlider);
         }
 
