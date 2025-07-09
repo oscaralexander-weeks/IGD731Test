@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public UnityEvent onUnitHit;
     public UnityEvent OnStyleIncrease;
     public UnityEvent OnStyleBoost;
+    public UnityEvent OnTrapKill;
 
     private void OnEnable()
     {
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
         else if (!HasStatusEffect)
         {
             OnStyleIncrease?.Invoke();
+            OnTrapKill?.Invoke();
         }
 
         onUnitDeath?.Invoke();

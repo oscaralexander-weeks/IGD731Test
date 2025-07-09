@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     public UnityEvent OnPlayerHit;
     public UnityEvent OnPlayerDeath;
     public UnityEvent OnStyleBoost;
+    public UnityEvent OnStealthKill;
 
     private void Update()
     {
@@ -63,6 +64,7 @@ public class PlayerStats : MonoBehaviour
         if (IsStealth)
         {
             OnStyleBoost?.Invoke();
+            OnStealthKill?.Invoke();
         }
     }
 }

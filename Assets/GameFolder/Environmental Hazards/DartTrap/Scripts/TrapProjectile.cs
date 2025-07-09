@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TrapProjectile : ProjectBaseClass
 {
+    public UnityEvent OnEnvironmentKill;
     private void OnEnable()
     {
         _returnToPoolTimerCoroutine = StartCoroutine(ReturnToPoolAfterTime());
@@ -19,6 +21,7 @@ public class TrapProjectile : ProjectBaseClass
             enemy.TakeDamage(damage);
             enemy.IsHit = true;
             OnStyleIncrease?.Invoke();
+            OnEnvironmentKill?.Invoke();
             Destroy(gameObject);
         }
 

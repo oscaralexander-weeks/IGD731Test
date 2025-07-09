@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9a36cae973d9d4ba0b8ee0bec3d0c5, type: 3}
+  m_Name: StageStats
+  m_EditorClassIdentifier: 
+  Hits: {fileID: 11400000, guid: 68bc66a81d96a064a8001534965eabf6, type: 2}
+  Misses: {fileID: 11400000, guid: fe1675f7330f27d4bbc54077beb0ab23, type: 2}
+  TrapKills: {fileID: 11400000, guid: dc7b7d9441c1a0c4abcdad404e83d817, type: 2}
+  EnvironmentKills: {fileID: 11400000, guid: 461a4800669cf7e43bc7785b6587e1f3, type: 2}
+  StealthKills: {fileID: 11400000, guid: 0d278216636ffcb4684b4393a80dd525, type: 2}
+  Style: {fileID: 11400000, guid: 210b06ff3889f9941aaf9bf1936b5378, type: 2}
