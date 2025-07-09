@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class NewStageStats : ScriptableObject
 {
-    public FloatVariable Hits, Misses, TrapKills, EnvironmentKills, StealthKills, Style;
+    public FloatVariable Hits, Misses, TrapKills, EnvironmentKills, StealthKills, Style, HighestCombo;
 }

@@ -11,7 +11,14 @@ public class StageClearBreakdown : MonoBehaviour
     private float _style;
     public void CheckStageStats()
     {
-        StatsTextComponent.text = ($"Hits: {stageStats.Hits.Value} \n Misses: {stageStats.Misses.Value} \n Trap Kills: {stageStats.TrapKills.Value} \n Stealth Kills: {stageStats.StealthKills.Value} \n Environment Kills: {stageStats.EnvironmentKills.Value}");
+        StatsTextComponent.text = (
+            $"Hits: {stageStats.Hits.Value} \n " +
+            $"Misses: {stageStats.Misses.Value} \n " +
+            $"Trap Kills: {stageStats.TrapKills.Value} \n " +
+            $"Stealth Kills: {stageStats.StealthKills.Value} \n " +
+            $"Environment Kills: {stageStats.EnvironmentKills.Value} \n " +
+            $"Highest Combo: {stageStats.HighestCombo.Value}");
+
         CheckStyle(stageStats.Style);
     }
 

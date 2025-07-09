@@ -4786,8 +4786,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a3c236c8147c6d409c4373d799b2490, type: 2}
   - {fileID: 11400000, guid: 68bc66a81d96a064a8001534965eabf6, type: 2}
   - {fileID: 11400000, guid: fe1675f7330f27d4bbc54077beb0ab23, type: 2}
-  - {fileID: 11400000, guid: 4940b720b7636eb4386e06d68c916274, type: 2}
+  - {fileID: 11400000, guid: 0d278216636ffcb4684b4393a80dd525, type: 2}
   - {fileID: 11400000, guid: c16f95b54aed1e845970bde6869c20a4, type: 2}
+  - {fileID: 11400000, guid: 461a4800669cf7e43bc7785b6587e1f3, type: 2}
+  - {fileID: 11400000, guid: dc7b7d9441c1a0c4abcdad404e83d817, type: 2}
+  - {fileID: 11400000, guid: 498382c2267b5c34384f07ad128400e4, type: 2}
   floatReferences: []
   runtimeSet: {fileID: 11400000, guid: 3973e9d89c2a88947a38ac7e81e84c6a, type: 2}
   isReset: 1
@@ -5744,6 +5747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Combo: {fileID: 11400000, guid: c16f95b54aed1e845970bde6869c20a4, type: 2}
+  HighestCombo: {fileID: 11400000, guid: 498382c2267b5c34384f07ad128400e4, type: 2}
   ComboTimer: 0
   ComboCooldown: 3
 --- !u!1 &846435124
