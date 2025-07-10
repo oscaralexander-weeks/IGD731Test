@@ -30,13 +30,13 @@ public class PlayerStats : MonoBehaviour
             Debug.LogWarning("HP not assigned");
         }
 
-        if(HP.Value <= 0)
+        HP.ApplyChange(-damage);
+        OnPlayerHit?.Invoke();
+
+        if (HP.Value <= 0)
         {
             Die();
         }
-
-        HP.ApplyChange(-damage);
-        OnPlayerHit?.Invoke();
     }
 
     private void CheckStealth()

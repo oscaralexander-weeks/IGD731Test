@@ -32,6 +32,7 @@ public class StageClearBreakdown : MonoBehaviour
             //_score -= stageStats.Misses.Value;
         }
 
+        _score *= stageStats.Style.Value;
         EntertainmentScore.text = "Score: " + _score.ToString("F0");
     }
 
