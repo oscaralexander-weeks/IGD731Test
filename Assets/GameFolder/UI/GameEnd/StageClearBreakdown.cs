@@ -9,7 +9,7 @@ public class StageClearBreakdown : MonoBehaviour
     [SerializeField] private TextMeshProUGUI StyleScoreTextComponent, StatsTextComponent, EntertainmentScore;
     [SerializeField] private NewStageStats stageStats;
     private float _style;
-    private float _score;
+    private float _score = 1;
 
     public void CheckStageStats()
     {
@@ -28,11 +28,11 @@ public class StageClearBreakdown : MonoBehaviour
     {
         foreach(FloatVariable stageStat in stageStats.StageStatsList)
         {
-            _score *= stageStat.Value;
-            _score -= stageStats.Misses.Value;
+            _score *= (stageStat.Value + 1);
+            //_score -= stageStats.Misses.Value;
         }
 
-        EntertainmentScore.text = _score.ToString("F0");
+        EntertainmentScore.text = "Score: " + _score.ToString("F0");
     }
 
     private void CheckStyle(FloatVariable style)

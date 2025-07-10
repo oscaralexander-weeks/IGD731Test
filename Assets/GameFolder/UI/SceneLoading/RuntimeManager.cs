@@ -40,4 +40,10 @@ public class RuntimeManager : MonoBehaviour
         Time.timeScale = 1;
         IsPaused = false;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
+
