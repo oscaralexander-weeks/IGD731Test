@@ -50,11 +50,11 @@ public class Enemy : MonoBehaviour, IDamageable
         if (HasStatusEffect)
         {
             OnStyleBoost?.Invoke();
+            OnTrapKill?.Invoke();
         }
         else if (!HasStatusEffect)
         {
             OnStyleIncrease?.Invoke();
-            OnTrapKill?.Invoke();
         }
 
         onUnitDeath?.Invoke();
