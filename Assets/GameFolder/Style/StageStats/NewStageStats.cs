@@ -6,4 +6,5 @@ using UnityEngine;
 public class NewStageStats : ScriptableObject
 {
     public FloatVariable Hits, Misses, TrapKills, EnvironmentKills, StealthKills, Style, HighestCombo;
+    public List<FloatVariable> StageStatsList = new List<FloatVariable>();
 }

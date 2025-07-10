@@ -19,3 +19,10 @@ MonoBehaviour:
   StealthKills: {fileID: 11400000, guid: 0d278216636ffcb4684b4393a80dd525, type: 2}
   Style: {fileID: 11400000, guid: 210b06ff3889f9941aaf9bf1936b5378, type: 2}
   HighestCombo: {fileID: 11400000, guid: 498382c2267b5c34384f07ad128400e4, type: 2}
+  StageStatsList:
+  - {fileID: 11400000, guid: 68bc66a81d96a064a8001534965eabf6, type: 2}
+  - {fileID: 11400000, guid: 461a4800669cf7e43bc7785b6587e1f3, type: 2}
+  - {fileID: 11400000, guid: 0d278216636ffcb4684b4393a80dd525, type: 2}
+  - {fileID: 11400000, guid: dc7b7d9441c1a0c4abcdad404e83d817, type: 2}
+  - {fileID: 11400000, guid: 210b06ff3889f9941aaf9bf1936b5378, type: 2}
+  - {fileID: 11400000, guid: 498382c2267b5c34384f07ad128400e4, type: 2}

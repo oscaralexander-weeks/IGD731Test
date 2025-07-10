@@ -6,11 +6,15 @@ using UnityEngine;
 public class StageClearBreakdown : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI StyleScoreTextComponent, StatsTextComponent;
+    [SerializeField] private TextMeshProUGUI StyleScoreTextComponent, StatsTextComponent, EntertainmentScore;
     [SerializeField] private NewStageStats stageStats;
     private float _style;
+    private float _score;
+
     public void CheckStageStats()
     {
+        CheckStyle(stageStats.Style);
+
         StatsTextComponent.text = (
             $"Hits: {stageStats.Hits.Value} \n " +
             $"Misses: {stageStats.Misses.Value} \n " +
@@ -18,10 +22,18 @@ public class StageClearBreakdown : MonoBehaviour
             $"Stealth Kills: {stageStats.StealthKills.Value} \n " +
             $"Environment Kills: {stageStats.EnvironmentKills.Value} \n " +
             $"Highest Combo: {stageStats.HighestCombo.Value}");
-
-        CheckStyle(stageStats.Style);
     }
 
+    public void CalculateEntertainmentScore()
+    {
+        foreach(FloatVariable stageStat in stageStats.StageStatsList)
+        {
+            _score *= stageStat.Value;
+            _score -= stageStats.Misses.Value;
+        }
+
+        EntertainmentScore.text = _score.ToString("F0");
+    }
 
     private void CheckStyle(FloatVariable style)
     {
