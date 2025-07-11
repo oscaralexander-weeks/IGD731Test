@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class RuntimeManager : MonoBehaviour
 {
 
     [SerializeField] private EnemyRuntimeSet _enemySet;
     public UnityEvent OnStageClear;
+    public UnityEvent OnGamePause;
     public static bool IsPaused;
+
+    public void OnPauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PauseGame();
+            OnGamePause?.Invoke();
+        }
+    }
 
     private void Awake()
     {
